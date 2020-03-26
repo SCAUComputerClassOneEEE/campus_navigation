@@ -1,0 +1,30 @@
+spring:
+  #配置数据库远程连接
+  datasource:
+    url: jdbc:mysql://139.199.66.139:3306/dachuang
+    username: root
+    password: "000000"
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+  #配置连接池
+  jpa:
+    properties:
+      hibernate:
+        hbm2dd1:
+          auto: true
+        ddl-auto: updata
+        enable_lazy_load_no_trans: true
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    open-in-view: false
+  #配置jackson
+
+server:
+  max-http-header-size: 1MB
+  port: 8080
+  #证书
+  ssl:
+    key-store: classpath:scaudachuang.xyz.jks
+    key-password: SCAUdachuang01
+    key-store-type: JKS
