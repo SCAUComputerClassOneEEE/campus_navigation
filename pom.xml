@@ -65,6 +65,7 @@
             </exclusions>
         </dependency>
 
+
         <dependency>
             <groupId>de.roskenet</groupId>
             <artifactId>springboot-javafx-support</artifactId>
