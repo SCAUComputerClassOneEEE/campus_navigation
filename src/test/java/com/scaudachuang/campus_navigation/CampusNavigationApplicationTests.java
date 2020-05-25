@@ -21,4 +21,8 @@ class CampusNavigationApplicationTests {
 //        System.out.println(c.getMessage());
 //    }
 
+    @Test
+    void iocTest(){
+
+    }
 }

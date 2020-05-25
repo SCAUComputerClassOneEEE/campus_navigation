@@ -4,11 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+
 /*
 参数接受包装成POJO
  */
 @Getter
 @Setter
 public class ImageFromWx {
-    private MultipartFile img;
+    private File img;
 }

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BuildingDAO extends JpaRepository<Building,Integer> {
-    Building getBuildingByName(String name);
+//    Building getBuildingByName(String name);
 }
