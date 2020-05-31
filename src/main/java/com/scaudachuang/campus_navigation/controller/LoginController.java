@@ -18,6 +18,7 @@ public class LoginController extends BorderPane implements Initializable {
 
     @FXML
     public Button button;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

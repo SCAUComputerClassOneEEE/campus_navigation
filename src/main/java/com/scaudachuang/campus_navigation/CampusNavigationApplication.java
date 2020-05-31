@@ -15,12 +15,16 @@ public class CampusNavigationApplication extends AbstractJavaFxApplicationSuppor
         launch(CampusNavigationApplication.class, LoginFXMLView.class, args);
     }
 
-//    @Override
-//    public void start(Stage stage) {
-//        BorderPane root = new BorderPane();
-////        root.setLeft(new Button());
-//        stage.setScene(new Scene(root));
-//        stage.setTitle("??");
-//        stage.show();
-//    }
+    @Override
+    public void start(Stage stage) {
+        BorderPane root = new BorderPane();
+        Button button = new Button();
+        root.setLeft(button);
+//        root.setLeft(new Button());
+        stage.setScene(new Scene(root));
+        stage.setMinWidth(500);
+        stage.setMinHeight(300);
+        stage.setTitle("??");
+        stage.show();
+    }
 }
