@@ -1,4 +1,8 @@
 package com.scaudachuang.campus_navigation.DAO;
 
-public interface UserDAO {
+import com.scaudachuang.campus_navigation.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserDAO extends JpaRepository<User,Integer> {
+
 }

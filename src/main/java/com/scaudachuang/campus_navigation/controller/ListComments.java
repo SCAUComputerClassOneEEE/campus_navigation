@@ -3,13 +3,13 @@ package com.scaudachuang.campus_navigation.controller;
 import com.scaudachuang.campus_navigation.entity.Comment;
 import com.scaudachuang.campus_navigation.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.Resource;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
 小程序点击评论按钮，返回排好序的json数据
@@ -47,6 +47,12 @@ public class ListComments {
         }
         return comments;
 
+    }
+
+    @RequestMapping(value = "/getCommenterInfo/{commenterString}")
+    public Map<String,String> getCommenterInfo(@PathVariable("commenterString") String commentString){
+        Map<String,String> retMap = new HashMap<>();
+        return retMap;
     }
 
 }
