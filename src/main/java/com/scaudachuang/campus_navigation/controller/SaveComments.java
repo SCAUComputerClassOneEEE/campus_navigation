@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.Date;
 
-@Getter
-@Setter
 @RestController
-@RequestMapping("/Comment")
+@RequestMapping("/comment")
 public class SaveComments {
 
     @Resource

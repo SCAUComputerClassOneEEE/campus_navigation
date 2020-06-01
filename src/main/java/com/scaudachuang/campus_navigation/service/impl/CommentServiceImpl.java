@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Getter
-@Setter
 @Service
 public class CommentServiceImpl implements CommentService {
 

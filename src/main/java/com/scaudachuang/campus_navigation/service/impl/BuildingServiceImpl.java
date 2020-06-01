@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-@Getter
-@Setter
 @Service
 public class BuildingServiceImpl implements BuildingService {
 

@@ -2,10 +2,7 @@ package com.scaudachuang.campus_navigation.controller;
 
 import com.scaudachuang.campus_navigation.entity.Comment;
 import com.scaudachuang.campus_navigation.service.CommentService;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,10 +15,8 @@ import java.util.List;
 小程序点击评论按钮，返回排好序的json数据
  */
 @Slf4j
-@Getter
-@Setter
 @RestController
-@RequestMapping("/Comment")
+@RequestMapping("/comment")
 public class ListComments {
 
     @Resource

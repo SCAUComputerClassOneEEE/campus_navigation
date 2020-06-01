@@ -1,6 +1,5 @@
 package com.scaudachuang.campus_navigation;
 
-import com.scaudachuang.campus_navigation.view.LoginFXMLView;
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CampusNavigationApplication extends AbstractJavaFxApplicationSupport {
 
     public static void main(String[] args) {
-        launch(CampusNavigationApplication.class, LoginFXMLView.class, args);
+        launch(CampusNavigationApplication.class, args);
     }
 
     @Override
