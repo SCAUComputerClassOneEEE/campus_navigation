@@ -24,6 +24,7 @@ public class Comment implements Serializable {
     @Column(name = "b_id",columnDefinition = "int          not null,")
     private int b_id;
 
+    @Column(name = "commenter_string")
     private String commenterString;
 
     @Column(name = "message",columnDefinition = "varchar(255) null comment '评论内容'")
