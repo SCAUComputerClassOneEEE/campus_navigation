@@ -14,7 +14,6 @@ import java.util.Map;
 /*
 小程序点击评论按钮，返回排好序的json数据
  */
-@Slf4j
 @RestController
 @RequestMapping("/comment")
 public class ListComments {

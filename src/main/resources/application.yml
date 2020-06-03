@@ -11,7 +11,6 @@ spring:
       idle-timeout: 60000
       maximum-pool-size: 30
       minimum-idle: 10
-
   jpa:
     properties:
       hibernate:
@@ -23,6 +22,9 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL5Dialect
     open-in-view: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 server:
   max-http-header-size: 1MB
@@ -32,7 +34,6 @@ server:
     key-store: classpath:scaudachuang.xyz.jks
     key-password: SCAUdachuang01
     key-store-type: JKS
-
 
 wx:
   WX_LOGIN_URL: https://api.weixin.qq.com/sns/jscode2session

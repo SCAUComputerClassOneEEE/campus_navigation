@@ -37,13 +37,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String insertRegUser(JSONObject userInfo) {
+        String definedLoginStatus = RandomString.getRandomString(10);
+        String user_name;
         User insert_user = new User();
         insert_user.setRegTime(new Date());
         insert_user.setCurrLogTime(new Date());
-        insert_user.setDefinedLoginStatus(RandomString.getRandomString(10));
+        insert_user.setDefinedLoginStatus(definedLoginStatus);
         insert_user.setUserInfo(userInfo.toJSONString());
         insert_user.setUserName(userInfo.getString("nickName"));
         userDAO.save(insert_user);
-        return insert_user.getUserName();
+        user_name = insert_user.getUserName();
+        return user_name + " " + definedLoginStatus;
     }
 }

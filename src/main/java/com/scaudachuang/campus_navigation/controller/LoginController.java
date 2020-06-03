@@ -1,6 +1,7 @@
 package com.scaudachuang.campus_navigation.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.scaudachuang.campus_navigation.POJO.LoginResult;
 import com.scaudachuang.campus_navigation.config.WxAppConfig;
 import com.scaudachuang.campus_navigation.controller.wxException.WxConnectionException;
 import com.scaudachuang.campus_navigation.entity.User;
@@ -26,16 +27,19 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.spec.InvalidParameterSpecException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 返回Map<String,String> retMap
+ * 返回LoginResult json
  * {
- *      status: xxx
- *      definedLogStatus: xxx (only success)
- *      msg: xxx
+ *      "status": xxx,
+ *      "definedLogStatus": "xxx",
+ *      "timestamp": "yyyy-MM-dd HH:mm:ss",
+ *      "msg": xxx
  * }
  */
 @RestController
@@ -43,6 +47,7 @@ import java.util.Map;
 public class LoginController  {
 
     private final Logger logger = LoggerFactory.getLogger(LoginController.class);
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Resource
     private UserService userService;
@@ -57,29 +62,31 @@ public class LoginController  {
      * @return 自定义登陆状态String
      */
     @RequestMapping(value = "/wxLogin")
-    public Map<String,String> wxLogin(@RequestParam("code") String code,
-                                      @RequestParam("nickName") String nickName)
-                                            throws URISyntaxException {
-        Map<String,String> retLoginMap = new HashMap<>();
+    public LoginResult wxLogin(@RequestParam("code") String code, @RequestParam("nickName") String nickName)
+            throws URISyntaxException {
+        LoginResult ret;
         try{
             JSONObject jsonObject = this.getWxResult(code);
             String open_id = jsonObject.get("openid").toString();
             User user = userService.findByOpenId(Integer.parseInt(open_id));
-            retLoginMap.put("status","200");
-            retLoginMap.put("definedLogStatus", user.getDefinedLoginStatus());
-            retLoginMap.put("msg","Login successful.");
 
+            ret = new LoginResult(
+                    200,
+                    "Login successful.",
+                    dateFormat.format(new Date()),
+                    user.getDefinedLoginStatus());
             logger.info("Login successful - " + nickName);
 
             userService.updateUserByOpenId(Integer.parseInt(open_id),nickName);//更新用户信息
         } catch (IOException | WxConnectionException exception) {
-            retLoginMap.put("status","500");
-            retLoginMap.put("msg","WeChat error.");
-
+            ret = new LoginResult(
+                    500,
+                    "WeChat error.",
+                    dateFormat.format(new Date()));
             logger.error("WeChat error: " + exception.getMessage());
-            return retLoginMap;
+            return ret;
         }
-        return retLoginMap;
+        return ret;
     }
 
     /**
@@ -90,12 +97,12 @@ public class LoginController  {
      * @return 自定义登陆状态String
      */
     @RequestMapping(value = "/decodeUserInfo")
-    public Map<String,String> decodeUserInfo(
+    public LoginResult decodeUserInfo(
             @RequestParam("code") String code,
             @RequestParam("encryptedData") String encryptedData,
             @RequestParam("iv") String iv)
             throws URISyntaxException {
-        Map<String,String> retMap = new HashMap<>();
+        LoginResult ret;
         //用户的完整信息userInfo
         try{
             JSONObject jsonObject = this.getWxResult(code);
@@ -103,30 +110,39 @@ public class LoginController  {
             String open_id = jsonObject.get("openid").toString();
             JSONObject userInfo = getUserInfo(encryptedData, sessionKey, iv);
             User user = userService.findByOpenId(Integer.parseInt(open_id));
+            String definedLoginStatus;
             if (user != null){
                 //user is existed 说明用户清除授权，再次授权
                 userService.updateUserByOpenId(Integer.parseInt(open_id),userInfo);//更新用户信息
                 logger.info("Authorization successful - " + user.getUserName());
+                definedLoginStatus = user.getDefinedLoginStatus();
             }else {
                 //user is not existed 说明用户第一次授权
-                String user_name = userService.insertRegUser(userInfo);
-                logger.info("Authorization successful - " + user_name);
+                String user_nameAndDefinedLoginStatus = userService.insertRegUser(userInfo);
+                String[] strings = user_nameAndDefinedLoginStatus.split(" ");
+                logger.info("Authorization successful - " + strings[0]);
+                definedLoginStatus = strings[1];
             }
-            retMap.put("status","200");
-            retMap.put("definedLogStatus", userService.findByOpenId(Integer.parseInt(open_id)).getDefinedLoginStatus());
-            retMap.put("msg","Authorization successful.");
 
-            return retMap;
+            ret = new LoginResult(
+                    200,
+                    "Authorization successful.",
+                    dateFormat.format(new Date()),
+                    definedLoginStatus);
+
+            return ret;
         } catch (NoSuchAlgorithmException | BadPaddingException |
                 InvalidKeyException | InvalidAlgorithmParameterException |
                 NoSuchPaddingException | InvalidParameterSpecException |
                 NoSuchProviderException | IllegalBlockSizeException |
                 IOException | WxConnectionException e) {
-            retMap.put("status","500");
-            retMap.put("msg","Decryption failed.");
 
+            ret = new LoginResult(
+                    500,
+                    "Decryption failed.",
+                    dateFormat.format(new Date()));
             logger.error("Decryption failed: " + e.getMessage());
-            return retMap;
+            return ret;
         }
     }
 

@@ -162,3 +162,5 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748)
 2020-06-03 13:23:09 ERROR https-jsse-nio-8080-exec-2 com.scaudachuang.campus_navigation.controller.LoginController WeChat error: WeChat server returned results without openid or session_ Key at 2020-06-03 13:23:09
 2020-06-03 13:26:15 ERROR https-jsse-nio-8080-exec-6 com.scaudachuang.campus_navigation.controller.LoginController WeChat error: errorcode: null errmsg: invalid code, hints: [ req_id: MgbClfMre-_64exa ] at 2020-06-03 13:26:15
+2020-06-03 13:50:24 ERROR https-jsse-nio-8080-exec-2 com.scaudachuang.campus_navigation.controller.LoginController WeChat error: WxService connection error. error_code: null err_msg: invalid code, hints: [ req_id: YgbC_AMre-QdLANa ]
+2020-06-03 14:16:26 ERROR https-jsse-nio-8080-exec-1 com.scaudachuang.campus_navigation.controller.LoginController WeChat error: WxService connection error. error_code: null err_msg: invalid code, hints: [ req_id: HGbCpZFFE-Ai.EuA ]

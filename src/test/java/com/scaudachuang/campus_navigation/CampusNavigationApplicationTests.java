@@ -23,6 +23,13 @@ class CampusNavigationApplicationTests {
 
     @Test
     void iocTest(){
+        String user_name = "lyx";
+        String defined = "skajhfdlasf";
+        String string = user_name + " " + defined;
+        String[] strings = string.split(" ");
+        for (String s : strings){
+            System.out.println(s);
+        }
 
     }
 }
