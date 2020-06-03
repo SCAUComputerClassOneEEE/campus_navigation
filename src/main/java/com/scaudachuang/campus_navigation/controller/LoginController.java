@@ -2,6 +2,7 @@ package com.scaudachuang.campus_navigation.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.scaudachuang.campus_navigation.config.WxAppConfig;
+import com.scaudachuang.campus_navigation.controller.wxException.WxConnectionException;
 import com.scaudachuang.campus_navigation.entity.User;
 import com.scaudachuang.campus_navigation.service.UserService;
 import com.scaudachuang.campus_navigation.utils.http.HttpClientUtil;
@@ -25,24 +26,29 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.spec.InvalidParameterSpecException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 返回Map<String,String> retMap
+ * {
+ *      status: xxx
+ *      definedLogStatus: xxx (only success)
+ *      msg: xxx
+ * }
+ */
 @RestController
 @RequestMapping("/login")
 public class LoginController  {
 
     private final Logger logger = LoggerFactory.getLogger(LoginController.class);
-    private final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Resource
     private UserService userService;
 
     @Resource
-    WxAppConfig wxAppConfig;
+    private WxAppConfig wxAppConfig;
 
     /**
      * 已通过微信授权，重新登陆
@@ -63,14 +69,14 @@ public class LoginController  {
             retLoginMap.put("definedLogStatus", user.getDefinedLoginStatus());
             retLoginMap.put("msg","Login successful.");
 
-            logger.info("Login successful at " + df.format(new Date()));
+            logger.info("Login successful - " + nickName);
 
             userService.updateUserByOpenId(Integer.parseInt(open_id),nickName);//更新用户信息
-        } catch (IOException exception) {
+        } catch (IOException | WxConnectionException exception) {
             retLoginMap.put("status","500");
             retLoginMap.put("msg","WeChat error.");
 
-            logger.error("WeChat error: " + exception.getMessage() + " at " + df.format(new Date()));
+            logger.error("WeChat error: " + exception.getMessage());
             return retLoginMap;
         }
         return retLoginMap;
@@ -100,35 +106,47 @@ public class LoginController  {
             if (user != null){
                 //user is existed 说明用户清除授权，再次授权
                 userService.updateUserByOpenId(Integer.parseInt(open_id),userInfo);//更新用户信息
+                logger.info("Authorization successful - " + user.getUserName());
             }else {
                 //user is not existed 说明用户第一次授权
-                userService.insertRegUser(userInfo);
+                String user_name = userService.insertRegUser(userInfo);
+                logger.info("Authorization successful - " + user_name);
             }
             retMap.put("status","200");
             retMap.put("definedLogStatus", userService.findByOpenId(Integer.parseInt(open_id)).getDefinedLoginStatus());
             retMap.put("msg","Authorization successful.");
 
-            logger.info("Authorization successful at " + df.format(new Date()));
             return retMap;
-        } catch (NoSuchAlgorithmException
-                | BadPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | NoSuchPaddingException
-                | InvalidParameterSpecException | NoSuchProviderException | IllegalBlockSizeException | IOException e) {
+        } catch (NoSuchAlgorithmException | BadPaddingException |
+                InvalidKeyException | InvalidAlgorithmParameterException |
+                NoSuchPaddingException | InvalidParameterSpecException |
+                NoSuchProviderException | IllegalBlockSizeException |
+                IOException | WxConnectionException e) {
             retMap.put("status","500");
             retMap.put("msg","Decryption failed.");
 
-            logger.error("Decryption failed: " + e.getMessage() + " at " + df.format(new Date()));
+            logger.error("Decryption failed: " + e.getMessage());
             return retMap;
         }
     }
 
-    public JSONObject getWxResult(String code ) throws URISyntaxException, IOException {
+    public JSONObject getWxResult(String code ) throws URISyntaxException, IOException, WxConnectionException {
+        if(code == null||code.length() == 0)
+            throw new WxConnectionException("Code error.");
         Map<String, String> param = new HashMap<>();
         param.put("appid", wxAppConfig.getWX_LOGIN_APP_ID());
         param.put("secret", wxAppConfig.getWX_LOGIN_SECRET());
         param.put("js_code",code);
         param.put("grant_type", wxAppConfig.getWX_LOGIN_GRANT_TYPE());
         String wxResult = HttpClientUtil.doGet(wxAppConfig.getWX_LOGIN_URL(),param);
-        return JSONObject.parseObject(wxResult);
+        JSONObject jsonObject = JSONObject.parseObject(wxResult);
+
+        if (jsonObject == null) throw new WxConnectionException("WxService connection error. But no result.");
+        else if (jsonObject.getString("openid") == null || jsonObject.getString("session_key") == null){
+            throw new WxConnectionException("WxService connection error. " +
+                    "error_code: " + jsonObject.getString("errorcode") + " err_msg: " + jsonObject.getString("errmsg")
+            ); }
+        else return jsonObject;
     }
 
     public static JSONObject getUserInfo(String encryptedData,String sessionKey,String iv) throws NoSuchPaddingException,

@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void insertRegUser(JSONObject userInfo) {
+    public String insertRegUser(JSONObject userInfo) {
         User insert_user = new User();
         insert_user.setRegTime(new Date());
         insert_user.setCurrLogTime(new Date());
@@ -44,5 +44,6 @@ public class UserServiceImpl implements UserService {
         insert_user.setUserInfo(userInfo.toJSONString());
         insert_user.setUserName(userInfo.getString("nickName"));
         userDAO.save(insert_user);
+        return insert_user.getUserName();
     }
 }
