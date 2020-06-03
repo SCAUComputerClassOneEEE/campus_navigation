@@ -7,11 +7,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Setter
 @Getter
 @Entity
+@Table(name = "admin")
 public class Admin {
 
     @Id

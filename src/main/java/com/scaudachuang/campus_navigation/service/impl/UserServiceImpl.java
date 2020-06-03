@@ -12,39 +12,37 @@ import java.util.Date;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Resource
     private UserDAO userDAO;
+
     @Override
-    public User findByOpenId(int openId) {
-        return userDAO.getOne(openId);
+    public User findByOpenId(String openId) {
+        return userDAO.findByOpenId(openId);
     }
 
     @Override
-    public void updateUserByOpenId(int openId, JSONObject jsonObject) {
-        User newUser = userDAO.getOne(openId);
+    public void updateUserByOpenId(String openId, JSONObject jsonObject) {
+        User newUser = userDAO.findByOpenId(openId);
         newUser.setCurrLogTime(new Date());
         newUser.setUserName(jsonObject.getString("nickName"));
         userDAO.save(newUser);
     }
 
     @Override
-    public void updateUserByOpenId(int openId, String nickName) {
-        User newUser = userDAO.getOne(openId);
-        newUser.setCurrLogTime(new Date());
-        newUser.setUserName(nickName);
-        userDAO.save(newUser);
-    }
-
-    @Override
-    public String insertRegUser(JSONObject userInfo) {
+    public String insertRegUser(JSONObject userInfo,String openId,String sessionKey) {
         String definedLoginStatus = RandomString.getRandomString(10);
         String user_name;
         User insert_user = new User();
+
+        insert_user.setOpenId(openId);
+        insert_user.setSessionKey(sessionKey);
         insert_user.setRegTime(new Date());
         insert_user.setCurrLogTime(new Date());
         insert_user.setDefinedLoginStatus(definedLoginStatus);
         insert_user.setUserInfo(userInfo.toJSONString());
         insert_user.setUserName(userInfo.getString("nickName"));
+
         userDAO.save(insert_user);
         user_name = insert_user.getUserName();
         return user_name + " " + definedLoginStatus;

@@ -13,13 +13,18 @@ import java.util.Date;
 
 @Setter
 @Getter
-@Entity
+@Entity(name ="User")
 @Table(name = "user")
 public class User {
 
     @Id
-    private int openId;
+    private int id;
 
+    @Column(name = "open_id")
+    private String openId;
+
+    @Column(name = "session_key")
+    private String sessionKey;
     /**
      * 自定义登陆态"随机码"，方便于评论者信息的读取。
      */
@@ -42,4 +47,9 @@ public class User {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date regTime;
 
+
+    @Override
+    public String toString(){
+        return this.getUserName()+this.getDefinedLoginStatus()+getOpenId();
+    }
 }

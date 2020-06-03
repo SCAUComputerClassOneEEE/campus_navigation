@@ -1,6 +1,7 @@
 package com.scaudachuang.campus_navigation.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.scaudachuang.campus_navigation.POJO.LoginParameters;
 import com.scaudachuang.campus_navigation.POJO.LoginResult;
 import com.scaudachuang.campus_navigation.config.WxAppConfig;
 import com.scaudachuang.campus_navigation.controller.wxException.WxConnectionException;
@@ -11,8 +12,10 @@ import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -36,7 +39,7 @@ import java.util.Map;
 /**
  * 返回LoginResult json
  * {
- *      "status": xxx,
+ *      "status": xxx,200 500
  *      "definedLogStatus": "xxx",
  *      "timestamp": "yyyy-MM-dd HH:mm:ss",
  *      "msg": xxx
@@ -56,52 +59,15 @@ public class LoginController  {
     private WxAppConfig wxAppConfig;
 
     /**
-     * 已通过微信授权，重新登陆
-     * @param code code
-     * @param nickName 前端可以获得
+     * 入库
      * @return 自定义登陆状态String
      */
-    @RequestMapping(value = "/wxLogin")
-    public LoginResult wxLogin(@RequestParam("code") String code, @RequestParam("nickName") String nickName)
+    @PostMapping(value = "/decodeUserInfo",produces = MediaType.APPLICATION_JSON_VALUE)
+    public LoginResult decodeUserInfo(@RequestBody LoginParameters loginParameters)
             throws URISyntaxException {
-        LoginResult ret;
-        try{
-            JSONObject jsonObject = this.getWxResult(code);
-            String open_id = jsonObject.get("openid").toString();
-            User user = userService.findByOpenId(Integer.parseInt(open_id));
-
-            ret = new LoginResult(
-                    200,
-                    "Login successful.",
-                    dateFormat.format(new Date()),
-                    user.getDefinedLoginStatus());
-            logger.info("Login successful - " + nickName);
-
-            userService.updateUserByOpenId(Integer.parseInt(open_id),nickName);//更新用户信息
-        } catch (IOException | WxConnectionException exception) {
-            ret = new LoginResult(
-                    500,
-                    "WeChat error.",
-                    dateFormat.format(new Date()));
-            logger.error("WeChat error: " + exception.getMessage());
-            return ret;
-        }
-        return ret;
-    }
-
-    /**
-     * 尚未授权
-     * @param code code
-     * @param encryptedData 加密信息
-     * @param iv 加密
-     * @return 自定义登陆状态String
-     */
-    @RequestMapping(value = "/decodeUserInfo")
-    public LoginResult decodeUserInfo(
-            @RequestParam("code") String code,
-            @RequestParam("encryptedData") String encryptedData,
-            @RequestParam("iv") String iv)
-            throws URISyntaxException {
+        String code = loginParameters.getCode();
+        String iv = loginParameters.getIv();
+        String encryptedData = loginParameters.getEncryptedData();
         LoginResult ret;
         //用户的完整信息userInfo
         try{
@@ -109,16 +75,16 @@ public class LoginController  {
             String sessionKey = jsonObject.get("session_key").toString();
             String open_id = jsonObject.get("openid").toString();
             JSONObject userInfo = getUserInfo(encryptedData, sessionKey, iv);
-            User user = userService.findByOpenId(Integer.parseInt(open_id));
+            User user = userService.findByOpenId(open_id);
             String definedLoginStatus;
             if (user != null){
                 //user is existed 说明用户清除授权，再次授权
-                userService.updateUserByOpenId(Integer.parseInt(open_id),userInfo);//更新用户信息
+                userService.updateUserByOpenId(open_id,userInfo);//更新用户信息
                 logger.info("Authorization successful - " + user.getUserName());
                 definedLoginStatus = user.getDefinedLoginStatus();
             }else {
                 //user is not existed 说明用户第一次授权
-                String user_nameAndDefinedLoginStatus = userService.insertRegUser(userInfo);
+                String user_nameAndDefinedLoginStatus = userService.insertRegUser(userInfo,open_id,sessionKey);
                 String[] strings = user_nameAndDefinedLoginStatus.split(" ");
                 logger.info("Authorization successful - " + strings[0]);
                 definedLoginStatus = strings[1];
@@ -136,7 +102,6 @@ public class LoginController  {
                 NoSuchPaddingException | InvalidParameterSpecException |
                 NoSuchProviderException | IllegalBlockSizeException |
                 IOException | WxConnectionException e) {
-
             ret = new LoginResult(
                     500,
                     "Decryption failed.",
