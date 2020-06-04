@@ -15,6 +15,7 @@ import lombok.Getter;
 * */
 
 public class ManagementView {
+
     @Getter
     public Scene scene;
     private BorderPane borderPane = new BorderPane();
@@ -36,6 +37,7 @@ public class ManagementView {
 
 
     public ManagementView(){
+
 
         scene = new Scene(borderPane);
         borderPane.setPrefSize(843,586);
