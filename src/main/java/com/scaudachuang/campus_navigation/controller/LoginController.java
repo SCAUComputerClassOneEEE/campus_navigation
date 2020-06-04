@@ -76,25 +76,25 @@ public class LoginController  {
             String open_id = jsonObject.get("openid").toString();
             JSONObject userInfo = getUserInfo(encryptedData, sessionKey, iv);
             User user = userService.findByOpenId(open_id);
-            String definedLoginStatus;
+            int userId;
             if (user != null){
                 //user is existed 说明用户清除授权，再次授权
                 userService.updateUserByOpenId(open_id,userInfo);//更新用户信息
                 logger.info("Authorization successful - " + user.getUserName());
-                definedLoginStatus = user.getDefinedLoginStatus();
+                userId = user.getId();
             }else {
                 //user is not existed 说明用户第一次授权
                 String user_nameAndDefinedLoginStatus = userService.insertRegUser(userInfo,open_id,sessionKey);
                 String[] strings = user_nameAndDefinedLoginStatus.split(" ");
                 logger.info("Authorization successful - " + strings[0]);
-                definedLoginStatus = strings[1];
+                userId = Integer.parseInt(strings[1]);
             }
 
             ret = new LoginResult(
                     200,
                     "Authorization successful.",
                     dateFormat.format(new Date()),
-                    definedLoginStatus);
+                    userId);
 
             return ret;
         } catch (NoSuchAlgorithmException | BadPaddingException |

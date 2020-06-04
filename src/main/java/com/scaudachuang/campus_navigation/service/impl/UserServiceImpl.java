@@ -23,28 +23,32 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserByOpenId(String openId, JSONObject jsonObject) {
-        User newUser = userDAO.findByOpenId(openId);
-        newUser.setCurrLogTime(new Date());
-        newUser.setUserName(jsonObject.getString("nickName"));
-        userDAO.save(newUser);
+        userDAO.updateUserCurrLogTimeByOpenId(new Date(),openId);
+        userDAO.updateUserNameByOpenId(jsonObject.getString("nickName"),openId);
     }
 
     @Override
     public String insertRegUser(JSONObject userInfo,String openId,String sessionKey) {
-        String definedLoginStatus = RandomString.getRandomString(10);
+        String id = RandomString.getRandomString(10);
         String user_name;
         User insert_user = new User();
 
         insert_user.setOpenId(openId);
+
         insert_user.setSessionKey(sessionKey);
+
         insert_user.setRegTime(new Date());
+
         insert_user.setCurrLogTime(new Date());
-        insert_user.setDefinedLoginStatus(definedLoginStatus);
+
+        insert_user.setId(Integer.parseInt(id));
+
         insert_user.setUserInfo(userInfo.toJSONString());
+
         insert_user.setUserName(userInfo.getString("nickName"));
 
         userDAO.save(insert_user);
         user_name = insert_user.getUserName();
-        return user_name + " " + definedLoginStatus;
+        return user_name + " " + id;
     }
 }

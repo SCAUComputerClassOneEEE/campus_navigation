@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class LoginResult {
     private int status;
-    private String definedLogStatus;
+    private int definedStatus;
     private String msg;
     private String timestamp;
 
@@ -16,10 +16,10 @@ public class LoginResult {
         this.status = status;
         this.timestamp = timestamp;
     }
-    public LoginResult(int status,String msg,String timestamp,String definedLogStatus){
+    public LoginResult(int status,String msg,String timestamp,int definedStatus){
         this.msg = msg;
         this.status = status;
         this.timestamp = timestamp;
-        this.definedLogStatus = definedLogStatus;
+        this.definedStatus = definedStatus;
     }
 }

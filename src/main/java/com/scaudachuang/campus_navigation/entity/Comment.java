@@ -21,29 +21,32 @@ public class Comment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;//主键
 
-    @Column(name = "b_id",columnDefinition = "int          not null,")
-    private int b_id;
+    @Column(name = "b_id",insertable = false,updatable = false)
+    private int bid;
 
-    @Column(name = "u_id")
-    private int u_id;
+    @Column(name = "u_id",insertable = false,updatable = false)
+    private int uid;
 
-    @Column(name = "message",columnDefinition = "varchar(255) null comment '评论内容'")
+    @Column(name = "message")
     private String message;//内容
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "time_of_commentary",columnDefinition = "datetime     null comment '评论时间'")
+    @Column(name = "time_of_commentary")
     private Date timeOfCommentary;//评论的时间
 
-    @Column(name = "number_of_praise",columnDefinition = "int          null comment '点赞个数'")
+    @Column(name = "number_of_praise")
     private int numberOfPraise;//点赞次数
 
-    /*
     @JsonIgnoreProperties(value = "comments")
     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
     @JoinColumn(name = "b_id")
     private Building building;
-    */
+
+    @JsonIgnoreProperties(value = "comments")
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
+    @JoinColumn(name = "u_id")
+    private User user;
 
     @Override
     public String toString() {

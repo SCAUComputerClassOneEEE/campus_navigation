@@ -48,10 +48,14 @@ public class ListComments {
 
     }
 
-    @RequestMapping(value = "/getCommenterInfo/{commenterString}")
-    public Map<String,String> getCommenterInfo(@PathVariable("commenterString") String commentString){
-        Map<String,String> retMap = new HashMap<>();
-        return retMap;
+    @RequestMapping(value = "/getCommentsByDefinedStatus")
+    public List<Comment> getCommentsByDefinedStatus(@RequestParam("definedStatus") int definedStatus){
+        return commentService.findByUid(definedStatus);
+    }
+
+    @RequestMapping(value = "/getCommentsByBuilding")
+    public List<Comment> getCommentsByBuilding(@RequestParam("b_id") int b_id){
+        return null;
     }
 
 }

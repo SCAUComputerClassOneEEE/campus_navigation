@@ -3,8 +3,6 @@ package com.scaudachuang.campus_navigation.service.impl;
 import com.scaudachuang.campus_navigation.DAO.CommentDAO;
 import com.scaudachuang.campus_navigation.entity.Comment;
 import com.scaudachuang.campus_navigation.service.CommentService;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,16 +22,21 @@ public class CommentServiceImpl implements CommentService {
     CommentDAO commentDAO;
 
     @Override
-    public Page<Comment> findByPage(int page, int size, int buildingId) {
+    public Page<Comment> findByPage(int page, int size, int bId) {
         return commentDAO.findAll((Specification<Comment>) (root, criteriaQuery, criteriaBuilder) -> {
 
             List<Predicate> predicatesList = new ArrayList<>();
             //动态sql
-            predicatesList.add(criteriaBuilder.equal(root.get("b_id"),buildingId));
+            predicatesList.add(criteriaBuilder.equal(root.get("bid"),bId));
             Predicate[] p = new Predicate[predicatesList.size()];
             return criteriaBuilder.and(predicatesList.toArray(p));
 
         }, PageRequest.of(page,size, Sort.Direction.DESC,"timeOfCommentary"));
+    }
+
+    @Override
+    public List<Comment> findByUid(int uId) {
+        return commentDAO.findAllByUid(uId);
     }
 
     public void save(Comment comment){

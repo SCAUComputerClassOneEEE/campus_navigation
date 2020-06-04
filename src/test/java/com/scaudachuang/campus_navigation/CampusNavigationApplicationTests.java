@@ -1,9 +1,14 @@
 package com.scaudachuang.campus_navigation;
 
+
+import com.alibaba.fastjson.JSONArray;
 import com.scaudachuang.campus_navigation.entity.Comment;
 import com.scaudachuang.campus_navigation.service.CommentService;
+import com.scaudachuang.campus_navigation.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -11,25 +16,17 @@ import java.util.List;
 @SpringBootTest
 class CampusNavigationApplicationTests {
 
-//    @Resource
-//    CommentService commentService;
-//
-//    @Test
-//    void contextLoads() {
-//        List<Comment> list = commentService.findByPage(0,3,2).getContent();
-//        for(Comment c:list)
-//        System.out.println(c.getMessage());
-//    }
+    @Resource
+    private UserService userService;
+    @Resource
+    private CommentService commentService;
 
     @Test
     void iocTest(){
-        String user_name = "lyx";
-        String defined = "skajhfdlasf";
-        String string = user_name + " " + defined;
-        String[] strings = string.split(" ");
-        for (String s : strings){
-            System.out.println(s);
+        Page<Comment> commentList = commentService.findByPage(0,3,1);
+        System.out.println(commentList.getSize());
+        for (Comment comment : commentList){
+            System.out.println(comment.getBuilding().getName());
         }
-
     }
 }
