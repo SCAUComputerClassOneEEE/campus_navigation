@@ -1,5 +1,7 @@
 package com.scaudachuang.campus_navigation;
 
+import com.scaudachuang.campus_navigation.fx.view.LoginView;
+import com.scaudachuang.campus_navigation.fx.view.SplashScreenCustom;
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,16 +16,14 @@ public class CampusNavigationApplication extends AbstractJavaFxApplicationSuppor
         launch(CampusNavigationApplication.class, args);
     }
 
+
     @Override
     public void start(Stage stage) {
-        BorderPane root = new BorderPane();
-        Button button = new Button();
-        root.setLeft(button);
-//        root.setLeft(new Button());
-        stage.setScene(new Scene(root));
-        stage.setMinWidth(500);
-        stage.setMinHeight(300);
-        stage.setTitle("??");
+        LoginView loginView = new LoginView();
+        stage.setScene(new Scene(loginView.getRoot()));
+        stage.setMinWidth(600);
+        stage.setMinHeight(400);
+        stage.setTitle("登录");
         stage.show();
     }
 }
