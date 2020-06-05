@@ -2,7 +2,6 @@ package com.scaudachuang.campus_navigation.fx.view;
 
 
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -17,7 +16,7 @@ import lombok.Getter;
 public class ManagementView {
 
     @Getter
-    public Scene scene;
+
     private BorderPane borderPane = new BorderPane();
     private VBox vBox = new VBox();
     private Accordion accordion = new Accordion();
@@ -39,7 +38,7 @@ public class ManagementView {
     public ManagementView(){
 
 
-        scene = new Scene(borderPane);
+
         borderPane.setPrefSize(843,586);
         borderPane.setLeft(vBox);
         borderPane.setStyle("-fx-background-color: white");
