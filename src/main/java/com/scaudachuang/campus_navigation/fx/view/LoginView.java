@@ -1,5 +1,7 @@
 package com.scaudachuang.campus_navigation.fx.view;
 
+import de.felixroske.jfxsupport.AbstractFxmlView;
+import de.felixroske.jfxsupport.FXMLView;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -9,8 +11,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import lombok.Getter;
 
-@Getter
-public class LoginView {
+@FXMLView(value = "/fxml/login.fxml",title = "loginView")
+public class LoginView extends AbstractFxmlView {
 
     private AnchorPane root = new AnchorPane();
     private Label title = new Label();

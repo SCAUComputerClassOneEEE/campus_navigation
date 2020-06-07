@@ -13,17 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CampusNavigationApplication extends AbstractJavaFxApplicationSupport {
 
     public static void main(String[] args) {
-        launch(CampusNavigationApplication.class, args);
-    }
-
-
-    @Override
-    public void start(Stage stage) {
-        LoginView loginView = new LoginView();
-        stage.setScene(new Scene(loginView.getRoot()));
-        stage.setMinWidth(600);
-        stage.setMinHeight(400);
-        stage.setTitle("登录");
-        stage.show();
+        launch(CampusNavigationApplication.class,LoginView.class,new SplashScreenCustom(), args);
     }
 }
