@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import java.util.Date;
 
 public interface UserDAO extends JpaRepository<User,Integer> {
+
     User findByOpenId(String openId);
 
     @Transactional

@@ -6,6 +6,7 @@ import com.scaudachuang.campus_navigation.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,8 @@ public class CommentServiceImpl implements CommentService {
     CommentDAO commentDAO;
 
     @Override
-    public Page<Comment> findByPage(int page, int size, int bId) {
+    public Page<Comment> findByPage(int page, int size, int bId,String sortKey) {
+        Pageable pageable = PageRequest.of(page,size, Sort.Direction.DESC,sortKey,"timeOfCommentary");
         return commentDAO.findAll((Specification<Comment>) (root, criteriaQuery, criteriaBuilder) -> {
 
             List<Predicate> predicatesList = new ArrayList<>();
@@ -31,7 +33,7 @@ public class CommentServiceImpl implements CommentService {
             Predicate[] p = new Predicate[predicatesList.size()];
             return criteriaBuilder.and(predicatesList.toArray(p));
 
-        }, PageRequest.of(page,size, Sort.Direction.DESC,"timeOfCommentary"));
+        }, pageable);
     }
 
     @Override

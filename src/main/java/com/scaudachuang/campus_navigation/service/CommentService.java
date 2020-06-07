@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface CommentService {
-    Page<Comment> findByPage(int page,int size,int bId);
+    Page<Comment> findByPage(int page,int size,int bId,String sortKey);
     List<Comment> findByUid(int definedStatus);
     void save(Comment comment);
 }

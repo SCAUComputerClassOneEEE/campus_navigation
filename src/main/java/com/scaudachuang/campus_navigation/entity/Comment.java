@@ -21,6 +21,12 @@ public class Comment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;//主键
 
+
+    /**
+     * json context
+     *
+     * **/
+
     @Column(name = "b_id",insertable = false,updatable = false)
     private int bid;
 
@@ -38,12 +44,16 @@ public class Comment implements Serializable {
     @Column(name = "number_of_praise")
     private int numberOfPraise;//点赞次数
 
-    @JsonIgnoreProperties(value = "comments")
+    /**    **/
+
+
+
+    @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
     @JoinColumn(name = "b_id")
     private Building building;
 
-    @JsonIgnoreProperties(value = "comments")
+    @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
     @JoinColumn(name = "u_id")
     private User user;
