@@ -5,7 +5,7 @@ import com.scaudachuang.campus_navigation.service.AdminService;
 
 import javax.annotation.Resource;
 
-public class Login {
+public class LoginController {
 
     @Resource
     private AdminService adminService;

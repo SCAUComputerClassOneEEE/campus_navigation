@@ -1,7 +1,8 @@
 package com.scaudachuang.campus_navigation.fx.view;
 
-import de.felixroske.jfxsupport.AbstractFxmlView;
-import de.felixroske.jfxsupport.FXMLView;
+
+import com.scaudachuang.campus_navigation.entity.Admin;
+import com.scaudachuang.campus_navigation.service.AdminService;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -11,10 +12,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import lombok.Getter;
 
-@FXMLView(value = "/fxml/login.fxml",title = "loginView")
-public class LoginView extends AbstractFxmlView {
+import javax.annotation.Resource;
 
-    private AnchorPane root = new AnchorPane();
+@Getter
+public class LoginView{
+
+
+
+    public AnchorPane root = new AnchorPane();
     private Label title = new Label();
     private Label userNameLabel = new Label();
     private Label passwordLabel = new Label();
@@ -67,6 +72,7 @@ public class LoginView extends AbstractFxmlView {
 
         root.setStyle("-fx-background-color: white");
         root.getChildren().addAll(title,userNameLabel,passwordLabel,userName,password,rememberPassword,autoLogin,rectangle,login,cancel);
+
 
     }
 }
