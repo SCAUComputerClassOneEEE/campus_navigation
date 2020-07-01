@@ -15,6 +15,12 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin findAdminByAdminName(String adminName) {
+        System.out.println(adminName);
+        try{
+            adminDAO.findAdminByAdminName(adminName);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return adminDAO.findAdminByAdminName(adminName);
     }
 }

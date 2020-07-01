@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
 
@@ -22,6 +23,7 @@ public class StageManager {
 	//private static final Logger LOG = getLogger(com.pdai.javafx.app.fx.StageManager.class);
 	
 	private final Stage primaryStage;
+
 	private final SpringFXMLLoader springFXMLLoader;
 
 	public StageManager(SpringFXMLLoader springFXMLLoader, Stage stage) {

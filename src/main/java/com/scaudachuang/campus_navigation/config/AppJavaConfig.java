@@ -1,5 +1,7 @@
-package com.scaudachuang.campus_navigation.fx;
+package com.scaudachuang.campus_navigation.config;
 
+import com.scaudachuang.campus_navigation.fx.SpringFXMLLoader;
+import com.scaudachuang.campus_navigation.fx.StageManager;
 import com.scaudachuang.campus_navigation.fx.exception.ExceptionWriter;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ import java.util.ResourceBundle;
 @Configuration
 public class AppJavaConfig {
 	
-    @Autowired 
+    @Autowired
     SpringFXMLLoader springFXMLLoader;
 
     /**
@@ -46,7 +48,7 @@ public class AppJavaConfig {
     
     @Bean
     @Lazy(value = true) //Stage only created after Spring context bootstap
-    public StageManager stageManager(Stage stage) throws IOException {
+    public StageManager stageManager(Stage stage) {
         return new StageManager(springFXMLLoader, stage);
     }
     
