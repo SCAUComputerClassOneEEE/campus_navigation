@@ -92,15 +92,5 @@ public abstract class AbstractFxApplication extends Application {
 		}
 	}
 
-	/*private Parent loadViewNodeHierarchy(String fxmlFilePath) {
-		Parent rootNode = null;
-		try {
 
-			rootNode = springFXMLLoader.load(fxmlFilePath);
-			Objects.requireNonNull(rootNode, "A Root FXML node must not be null");
-		} catch (Exception exception) {
-			exception.printStackTrace();
-		}
-		return rootNode;
-	}*/
 }

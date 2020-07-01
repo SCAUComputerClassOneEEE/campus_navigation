@@ -123,4 +123,6 @@ public class StageManager {
 		myStage.setScene(myScene);
 		myStage.show();
 	}
+
+
 }

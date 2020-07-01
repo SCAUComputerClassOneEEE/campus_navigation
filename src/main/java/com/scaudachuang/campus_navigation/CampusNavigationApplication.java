@@ -12,5 +12,5 @@ public class CampusNavigationApplication extends AbstractFxApplication {
     public static void main(String[] args) {
         run(CampusNavigationApplication.class,
                 Arrays.asList(FxmlView.MAIN,FxmlView.LOGIN),
-                FxmlView.MAIN, args);    }
+                FxmlView.LOGIN, args);    }
 }
