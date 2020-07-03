@@ -18,7 +18,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * Manages switching Scenes on the Primary Stage
  */
 public class StageManager {
-
+	public static Stage myStage = new Stage();
 	private final StackPane content = new StackPane();
 	//private static final Logger LOG = getLogger(com.pdai.javafx.app.fx.StageManager.class);
 	
@@ -120,11 +120,13 @@ public class StageManager {
 	}
 	*/
 	public void show() {
-		Stage myStage = new Stage();
 		Scene myScene = new Scene(this.content);
 		myStage.setScene(myScene);
 		myStage.show();
 	}
 
+	public void close(){
+		myStage.close();
+	}
 
 }
