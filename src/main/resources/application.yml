@@ -1,9 +1,9 @@
 spring:
   #配置数据库远程连接
   datasource:
-    url: jdbc:mysql://139.199.66.139:3306/dachuang
+    url: jdbc:mysql://139.199.66.139:3308/dachuang
     username: root
-    password: "000000"
+    password: "SCAUdachuang@database12138."
     driver-class-name: com.mysql.jdbc.Driver
     #配置连接池
     type: com.zaxxer.hikari.HikariDataSource
