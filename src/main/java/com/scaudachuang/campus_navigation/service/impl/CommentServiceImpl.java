@@ -44,4 +44,9 @@ public class CommentServiceImpl implements CommentService {
     public void save(Comment comment){
         commentDAO.save(comment);
     }
+
+    @Override
+    public List<Comment> findAll() {
+        return commentDAO.findAll();
+    }
 }

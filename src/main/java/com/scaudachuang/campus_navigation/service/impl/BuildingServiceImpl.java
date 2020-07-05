@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class BuildingServiceImpl implements BuildingService {
@@ -18,6 +19,11 @@ public class BuildingServiceImpl implements BuildingService {
     @Override
     public Building getBuildingById(int id) {
         return buildingDAO.getOne(id);
+    }
+
+    @Override
+    public List<Building> finAll() {
+        return buildingDAO.findAll();
     }
 
 }

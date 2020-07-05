@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -50,5 +51,10 @@ public class UserServiceImpl implements UserService {
         userDAO.save(insert_user);
         user_name = insert_user.getUserName();
         return user_name + " " + id;
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userDAO.findAll();
     }
 }

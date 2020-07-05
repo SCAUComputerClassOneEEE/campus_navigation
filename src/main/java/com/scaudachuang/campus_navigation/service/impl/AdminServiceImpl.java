@@ -6,6 +6,7 @@ import com.scaudachuang.campus_navigation.service.AdminService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -22,5 +23,10 @@ public class AdminServiceImpl implements AdminService {
             System.out.println(e.getMessage());
         }
         return adminDAO.findAdminByAdminName(adminName);
+    }
+
+    @Override
+    public List<Admin> findAll() {
+        return adminDAO.findAll();
     }
 }

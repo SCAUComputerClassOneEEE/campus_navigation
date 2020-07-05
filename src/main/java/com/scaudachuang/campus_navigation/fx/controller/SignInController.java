@@ -24,6 +24,8 @@ import java.util.ResourceBundle;
 @FXMLController
 @Component
 public class SignInController implements Initializable{
+
+    //通过service层，获取数据库的数据
     @Resource
     private AdminService adminService;
 
