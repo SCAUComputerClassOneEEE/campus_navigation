@@ -18,17 +18,18 @@ import static org.slf4j.LoggerFactory.getLogger;
  * Manages switching Scenes on the Primary Stage
  */
 public class StageManager {
-	public static Stage myStage = new Stage();
+
 	private final StackPane content = new StackPane();
-	//private static final Logger LOG = getLogger(com.pdai.javafx.app.fx.StageManager.class);
-	
-	private final Stage primaryStage;
+
+	private Scene myScene = new Scene(this.content);
+
+	public static Stage primaryStage;
 
 	private final SpringFXMLLoader springFXMLLoader;
 
 	public StageManager(SpringFXMLLoader springFXMLLoader, Stage stage) {
 		this.springFXMLLoader = springFXMLLoader;
-		this.primaryStage = stage;
+		primaryStage = stage;
 		
 		// set decorator
 
@@ -41,6 +42,7 @@ public class StageManager {
 	 */
 	public void switchScene(final FxmlView view) {
 		Parent viewRootNodeHierarchy = loadViewNodeHierarchy(view.fxml());
+		this.content.getChildren().clear();
 		this.content.getChildren().add(viewRootNodeHierarchy);
 	}
 	
@@ -120,13 +122,13 @@ public class StageManager {
 	}
 	*/
 	public void show() {
-		Scene myScene = new Scene(this.content);
-		myStage.setScene(myScene);
-		myStage.show();
+		myScene.setRoot(this.content);
+		primaryStage.setScene(myScene);
+		primaryStage.show();
 	}
 
 	public void close(){
-		myStage.close();
+		primaryStage.close();
 	}
 
 }

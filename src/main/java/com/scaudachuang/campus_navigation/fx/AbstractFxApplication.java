@@ -18,7 +18,7 @@ import static com.sun.javafx.application.LauncherImpl.launchApplication;
 public abstract class AbstractFxApplication extends Application {
 
 	// stage manager
-	protected StageManager stageManager;
+	public static StageManager stageManager;
 
 	// pre-load views
 	protected static List<FxmlView> preloadViews;
