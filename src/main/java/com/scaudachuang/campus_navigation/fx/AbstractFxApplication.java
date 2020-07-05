@@ -1,21 +1,15 @@
 package com.scaudachuang.campus_navigation.fx;
 
-import com.scaudachuang.campus_navigation.entity.Admin;
-import com.scaudachuang.campus_navigation.fx.view.LoginView;
-import com.scaudachuang.campus_navigation.fx.view.ManagementView;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 import static com.sun.javafx.application.LauncherImpl.launchApplication;
