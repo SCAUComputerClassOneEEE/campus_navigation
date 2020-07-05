@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 @FXMLController
 @Component
-public class CnmController implements Initializable{
+public class SignInController implements Initializable{
     @Resource
     private AdminService adminService;
 
