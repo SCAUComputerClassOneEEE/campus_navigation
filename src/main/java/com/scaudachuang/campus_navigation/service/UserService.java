@@ -10,4 +10,5 @@ public interface UserService {
     void updateUserByOpenId(String openId, JSONObject jsonObject);
     String insertRegUser(JSONObject jsonObject,String openId,String sessionKey);
     List<User> findAll();
+    void deleteUsers(List<User> userList);
 }

@@ -41,12 +41,17 @@ public class CommentServiceImpl implements CommentService {
         return commentDAO.findAllByUid(uId);
     }
 
-    public void save(Comment comment){
+    public void addComment(Comment comment){
         commentDAO.save(comment);
     }
 
     @Override
     public List<Comment> findAll() {
         return commentDAO.findAll();
+    }
+
+    @Override
+    public void deleteComments(List<Comment> commentList) {
+        commentDAO.deleteInBatch(commentList);
     }
 }

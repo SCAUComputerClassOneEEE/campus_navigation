@@ -22,7 +22,7 @@ public class SaveComments {
         String response = "Message: ";
         try{
             comment.setTimeOfCommentary(new Date());
-            commentService.save(comment);
+            commentService.addComment(comment);
             response += "Done!";
         }catch (Exception e){
             response = e.getMessage();
