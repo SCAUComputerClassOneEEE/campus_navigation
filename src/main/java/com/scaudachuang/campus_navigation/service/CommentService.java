@@ -8,6 +8,8 @@ import java.util.List;
 public interface CommentService {
     Page<Comment> findByPage(int page,int size,int bId,String sortKey);
     List<Comment> findByUid(int definedStatus);
-    void save(Comment comment);
+    void addComment(Comment comment);
     List<Comment> findAll();
+    void deleteComments(List<Comment> commentList);
+
 }
