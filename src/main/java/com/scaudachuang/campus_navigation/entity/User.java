@@ -16,7 +16,7 @@ import java.util.Date;
 @Getter
 @Entity(name ="user")
 @Table(name = "user")
-public class User  implements Serializable {
+public class User implements Serializable,Data {
 
     @Id
     private int id;

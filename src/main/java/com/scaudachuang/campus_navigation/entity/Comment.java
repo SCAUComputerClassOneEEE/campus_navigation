@@ -15,7 +15,7 @@ import java.util.Date;
 @Entity
 @Table(name = "comment")
 @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-public class Comment implements Serializable {
+public class Comment implements Serializable,Data {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
