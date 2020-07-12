@@ -67,21 +67,28 @@ public class ManagementViewController implements Initializable {
     public boolean buFlag = true;
     public boolean cmFlag = true;
     public boolean usFlag = true;
+
+    private Tab admin = new Tab("admin");
+    private Tab building = new Tab("building");
+    private Tab comment = new Tab("comment");
+    private Tab user = new Tab("user");
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
         vBox.setPadding(new Insets(0));
+        //设置tab为可关闭
+        admin.setOnClosed(event -> adFlag = true);
+        building.setOnClosed(event -> buFlag = true);
+        comment.setOnClosed(event -> cmFlag = true);
+        user.setOnClosed(event -> usFlag = true);
     }
     @FXML
     private void Admin(){
-        Tab admin = new Tab("admin");
-        admin.setOnClosed(event -> adFlag = true);
         if(adFlag){
         adFlag = false;
         List<Admin> adminList = adminService.findAll();
         ObservableList<Admin> adminObservableList = FXCollections.observableArrayList(adminList);
         tabPane.getTabs().add(admin);
-        tabPane.getSelectionModel().select(admin);
         TableView<Admin> tableView = new TableView<>(adminObservableList);
         admin.setContent(tableView);
         //按列数据加载
@@ -100,18 +107,15 @@ public class ManagementViewController implements Initializable {
         tableView.getColumns().add(tc_date);
         tc_date.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRegTime().toString()));
         }
-
+        tabPane.getSelectionModel().select(admin);
     }
     @FXML
     private void Building(){
-        Tab building = new Tab("building");
-        building.setOnClosed(event -> buFlag = true);
         if(buFlag) {
             buFlag = false;
             List<Building> buildingList = buildingService.finAll();
             ObservableList<Building> buildingObservableList = FXCollections.observableArrayList(buildingList);
             tabPane.getTabs().add(building);
-            tabPane.getSelectionModel().select(building);
             TableView<Building> tableView = new TableView<>(buildingObservableList);
             building.setContent(tableView);
             //加载数据
@@ -145,16 +149,14 @@ public class ManagementViewController implements Initializable {
             tableView.getColumns().add(tc_img);
             tc_img.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getImg()));
         }
+        tabPane.getSelectionModel().select(building);
     }
     @FXML
     private void Comment(){
-        Tab comment = new Tab("comment");
-        comment.setOnClosed(event -> cmFlag = true);
         if(cmFlag) {
             cmFlag = false;
             List<Comment> commentList = commentService.findAll();
             ObservableList<Comment> commentObservableList = FXCollections.observableArrayList(commentList);
-            tabPane.getSelectionModel().select(comment);
             tabPane.getTabs().add(comment);
             TableView<Comment> tableView = new TableView<>(commentObservableList);
             comment.setContent(tableView);
@@ -184,17 +186,14 @@ public class ManagementViewController implements Initializable {
             tableView.getColumns().add(tc_number_of_praise);
             tc_number_of_praise.setCellValueFactory(param -> new SimpleIntegerProperty(param.getValue().getNumberOfPraise()));
         }
-
+        tabPane.getSelectionModel().select(comment);
     }
     @FXML
     private void User() {
-        Tab user = new Tab("user");
-        user.setOnClosed(event -> usFlag = true);
         if (usFlag) {
             usFlag = false;
             List<User> userList = userService.findAll();
             ObservableList<User> userObservableList = FXCollections.observableArrayList(userList);
-            tabPane.getSelectionModel().select(user);
             tabPane.getTabs().add(user);
             TableView<User> tableView = new TableView<>(userObservableList);
             user.setContent(tableView);
@@ -230,5 +229,6 @@ public class ManagementViewController implements Initializable {
             tableView.getColumns().add(tc_reg_time);
             tc_reg_time.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRegTime().toString()));
         }
+        tabPane.getSelectionModel().select(user);
     }
 }
