@@ -30,9 +30,7 @@ public class StageManager {
 	public StageManager(SpringFXMLLoader springFXMLLoader, Stage stage) {
 		this.springFXMLLoader = springFXMLLoader;
 		primaryStage = stage;
-		
-		// set decorator
-
+		primaryStage.resizableProperty().setValue(Boolean.FALSE);
 	}
 	
 	/**
@@ -44,48 +42,6 @@ public class StageManager {
 		Parent viewRootNodeHierarchy = loadViewNodeHierarchy(view.fxml());
 		this.content.getChildren().clear();
 		this.content.getChildren().add(viewRootNodeHierarchy);
-	}
-	
-	/**
-	 * replace content for pane
-	 * 
-	 * @param view
-	 * @param body
-	 */
-	public void switchContent(final FxmlView view, ScrollPane body) {
-		Parent viewRootNodeHierarchy = loadViewNodeHierarchy(view.fxml());
-		body.setContent(viewRootNodeHierarchy);
-	}
-	
-	/**
-	 * show
-	 * 
-	 * @param view
-	 */
-	public void showPopWindow(final FxmlView view) {
-		Parent viewRootNodeHierarchy = loadViewNodeHierarchy(view.fxml());
-		
-		Scene scene = prepareScene(viewRootNodeHierarchy);
-		primaryStage.setTitle(view.title());
-		primaryStage.setScene(scene);
-		primaryStage.setHeight(600d);
-		primaryStage.setWidth(1000d);
-        primaryStage.centerOnScreen();
-		try {
-			primaryStage.show();
-		} catch (Exception exception) {
-			logAndExit("Unable to show scene for title" + view.title(), exception);
-		}
-	}
-
-	private Scene prepareScene(Parent rootnode) {
-		Scene scene = primaryStage.getScene();
-
-		if (scene == null) {
-			scene = new Scene(rootnode);
-		}
-		scene.setRoot(rootnode);
-		return scene;
 	}
 
 	/**
@@ -106,21 +62,9 @@ public class StageManager {
 	}
 
 	private void logAndExit(String errorMsg, Exception exception) {
-		//LOG.error(errorMsg, exception, exception.getCause());
 		Platform.exit();
 	}
 
-	/*public GNDecorator getDecorator() {
-		return decorator;
-	}
-
-	public void closeAllPopups() {
-		if (MainController.popConfig.isShowing())
-			MainController.popConfig.hide();
-		if (MainController.popup.isShowing())
-			MainController.popup.hide();
-	}
-	*/
 	public void show() {
 		myScene.setRoot(this.content);
 		primaryStage.setScene(myScene);

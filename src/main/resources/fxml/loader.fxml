@@ -40,7 +40,7 @@
                   </Label>
                </children>
             </VBox>
-            <Label layoutX="5.0" layoutY="407.0" prefHeight="17.0" prefWidth="186.0" text="© pdai - version 1.1.1  build 2019042801" textFill="WHITE" AnchorPane.bottomAnchor="10.0">
+            <Label layoutX="5.0" layoutY="407.0" prefHeight="17.0" prefWidth="186.0" text="© SCAUdachuang - version 1.0  build 20200701" textFill="WHITE" AnchorPane.bottomAnchor="10.0">
                <font>
                   <Font size="10.0" />
                </font>
@@ -53,7 +53,7 @@
             </Text>
             <Label fx:id="progressLabel" layoutX="14.0" layoutY="336.0" text="正在加载..." textFill="WHITE" AnchorPane.bottomAnchor="60.0" />
             <JFXProgressBar fx:id="progressBar" layoutX="14.0" layoutY="382.0" prefHeight="4.0" prefWidth="401.0" progress="0.0" AnchorPane.bottomAnchor="36.0" />
-            <Label layoutX="65.0" layoutY="75.0" prefHeight="114.0" prefWidth="176.0" styleClass="fix" text="网络扫描工具" textAlignment="CENTER" textFill="WHITE">
+            <Label layoutX="65.0" layoutY="75.0" prefHeight="114.0" prefWidth="176.0" styleClass="fix" text="后台管理系统" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB" size="28.0" />
                </font>

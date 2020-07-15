@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "building")
 @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-public class Building implements Serializable {
+public class Building implements Serializable,Data {
 
     @Id
     @GeneratedValue
@@ -56,4 +56,6 @@ public class Building implements Serializable {
                 "\t"+this.getPosition()+"]\n" +
                 "}";
     }
+
+
 }

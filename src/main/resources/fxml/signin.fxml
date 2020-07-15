@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scaudachuang.campus_navigation.fx.controller.SignInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scaudachuang.campus_navigation.fx.controller.SignInController">
    <children>
       <Button fx:id="login" layoutX="396.0" layoutY="335.0" mnemonicParsing="false" onAction="#login" text="登录" />
       <Button layoutX="470.0" layoutY="335.0" mnemonicParsing="false" onAction="#cancel" text="取消" />
@@ -14,7 +15,6 @@
       <PasswordField fx:id="userPassword" layoutX="268.0" layoutY="221.0" />
       <Label layoutX="246.0" layoutY="72.0" text="数据库管理员登录界面" />
       <CheckBox fx:id="rememberPassword" layoutX="272.0" layoutY="276.0" mnemonicParsing="false" onAction="#rememberPassword" text="记住密码" />
-      <CheckBox fx:id="autoLogin" layoutX="383.0" layoutY="276.0" mnemonicParsing="false" text="自动登录" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTSKYBLUE" height="400.0" layoutX="-6.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTSKYBLUE" height="400.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
    </children>
 </AnchorPane>

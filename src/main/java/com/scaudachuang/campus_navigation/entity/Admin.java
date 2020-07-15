@@ -9,13 +9,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "admin")
-public class Admin {
+public class Admin implements Serializable,Data {
 
     @Id
     private int id;
@@ -30,4 +31,14 @@ public class Admin {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date regTime;
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "id=" + id +
+                ", password='" + password + '\'' +
+                ", adminName='" + adminName + '\'' +
+                ", regTime=" + regTime +
+                '}';
+    }
 }

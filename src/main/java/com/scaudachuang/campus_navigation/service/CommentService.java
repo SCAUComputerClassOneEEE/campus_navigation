@@ -11,5 +11,4 @@ public interface CommentService {
     void addComment(Comment comment);
     List<Comment> findAll();
     void deleteComments(List<Comment> commentList);
-
 }
