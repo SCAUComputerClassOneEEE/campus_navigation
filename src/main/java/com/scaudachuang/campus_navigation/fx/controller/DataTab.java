@@ -4,9 +4,9 @@ import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.event.EventHandler;
+import javafx.scene.control.*;
+import javafx.scene.input.ContextMenuEvent;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -21,6 +21,9 @@ public class DataTab<E> extends Tab {
     //TableView
     private final TableView<E> tableView;
 
+    //菜单栏
+    private ContextMenu contextMenu;
+
     public DataTab(DataEnum.DataForm dataForm, List<E> eList) throws ClassNotFoundException {
 
         //泛型数据装载
@@ -33,8 +36,10 @@ public class DataTab<E> extends Tab {
         tableView = new TableView<>(eObservableList);
         super.setContent(tableView);
         initTableColumns();
+        initContextMenu();
+        //为TableView增加监听器
+        tableView.setOnContextMenuRequested(event ->contextMenu.show(tableView, event.getScreenX(), event.getScreenY()));
     }
-
     private void initTableColumns(){
         //获得泛型类的数据域
         Field[] fields = EType.getDeclaredFields();
@@ -60,6 +65,18 @@ public class DataTab<E> extends Tab {
                 return null;
             });
         }
+    }
+
+    private void initContextMenu(){
+        this.contextMenu = new ContextMenu();
+        MenuItem add = new MenuItem("增加记录");
+        MenuItem delete = new MenuItem("清空表格");
+        MenuItem modify = new MenuItem("修改记录");
+        MenuItem lookup = new MenuItem("查看详情");
+        delete.setOnAction(event -> {
+            deleteElement();
+        });
+        this.contextMenu.getItems().addAll(add,delete,modify,lookup);
     }
 
     /*

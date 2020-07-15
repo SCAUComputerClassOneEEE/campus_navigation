@@ -137,7 +137,11 @@ public class SignInController implements Initializable{
     //更新登录数据
     private void setLoginMassage(){
         loginMassage.set(0,loginMassage.get(0).substring(0,9)+userID.getText());
-        loginMassage.set(1,loginMassage.get(1).substring(0,9)+userPassword.getText());
+        String password = "";
+        if(rememberPassword.selectedProperty().getValue()){
+            password = userPassword.getText();
+        }
+        loginMassage.set(1,loginMassage.get(1).substring(0,9)+password);
         loginMassage.set(2,loginMassage.get(2).substring(0,17)+rememberPassword.selectedProperty().getValue().toString());
         try {
             File f = new File(System.getProperty("user.dir") +"\\src\\main\\resources\\loginMassage\\massage");
