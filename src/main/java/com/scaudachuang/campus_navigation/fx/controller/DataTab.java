@@ -6,7 +6,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.ContextMenuEvent;
+import sun.security.krb5.internal.crypto.EType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -36,9 +38,7 @@ public class DataTab<E> extends Tab {
         tableView = new TableView<>(eObservableList);
         super.setContent(tableView);
         initTableColumns();
-        initContextMenu();
-        //为TableView增加监听器
-        tableView.setOnContextMenuRequested(event ->contextMenu.show(tableView, event.getScreenX(), event.getScreenY()));
+
     }
     private void initTableColumns(){
         //获得泛型类的数据域
@@ -64,29 +64,42 @@ public class DataTab<E> extends Tab {
                 }
                 return null;
             });
+            eTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         }
+
+        //初始化菜单
+        initContextMenu();
+        //为TableView增加监听器
+        tableView.setOnContextMenuRequested(event ->contextMenu.show(tableView, event.getScreenX(), event.getScreenY()));
+        tableView.setOnMouseClicked(event -> {
+            this.contextMenu.hide();
+        });
+        tableView.setEditable(true);
     }
 
     private void initContextMenu(){
         this.contextMenu = new ContextMenu();
-        MenuItem add = new MenuItem("增加记录");
-        MenuItem delete = new MenuItem("清空表格");
-        MenuItem modify = new MenuItem("修改记录");
-        MenuItem lookup = new MenuItem("查看详情");
+        MenuItem add = new MenuItem("添加");
+        MenuItem delete = new MenuItem("删除");
+        MenuItem lookup = new MenuItem("查看");
         delete.setOnAction(event -> {
             deleteElement();
         });
-        this.contextMenu.getItems().addAll(add,delete,modify,lookup);
+        add.setOnAction(event -> {
+            addElement();
+        });
+        this.contextMenu.getItems().addAll(add,delete,lookup);
     }
 
     /*
     对eObservableList的增删改查操作
      */
     public void addElement(){
-
+        eObservableList.add(eObservableList.get(eObservableList.size()-1));
     }
     public void deleteElement(){
-        eObservableList.clear();
+        eObservableList.remove(tableView.getSelectionModel().getSelectedItem());
+
     }
     public void checkElement(){
 
