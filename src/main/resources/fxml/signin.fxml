@@ -14,7 +14,7 @@
       <TextField fx:id="userID" layoutX="268.0" layoutY="156.0" />
       <PasswordField fx:id="userPassword" layoutX="268.0" layoutY="221.0" />
       <Label layoutX="246.0" layoutY="72.0" text="数据库管理员登录界面" />
-      <CheckBox fx:id="rememberPassword" layoutX="272.0" layoutY="276.0" mnemonicParsing="false" onAction="#rememberPassword" text="记住密码" />
+      <CheckBox fx:id="rememberPassword" layoutX="272.0" layoutY="276.0" mnemonicParsing="false" text="记住密码" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTSKYBLUE" height="400.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
    </children>
 </AnchorPane>

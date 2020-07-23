@@ -64,7 +64,7 @@ public class DataTab<E> extends Tab {
                 }
                 return null;
             });
-            eTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+            //eTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         }
 
         //初始化菜单

@@ -33,9 +33,6 @@ public class SignInController implements Initializable{
     private AdminService adminService;
 
     @FXML
-    private Button login;
-
-    @FXML
     private TextField userID;
 
     @FXML
@@ -72,7 +69,6 @@ public class SignInController implements Initializable{
             if(admin!=null){
                 String InputPassword = userPassword.getText();
                 if (admin.getPassword().equals(InputPassword)){
-                    //System.out.println("登录成功");
                     //关闭原界面
                     AbstractFxApplication.stageManager.close();
                     //转换成数据界面
@@ -85,32 +81,24 @@ public class SignInController implements Initializable{
                     alert.setHeaderText("密码错误！");
                     alert.setContentText("请检查账号密码是否准确");
                     alert.showAndWait();
-                    //System.out.println("密码错误");
                 }
             }
             else {
                 alert.setHeaderText("用户不存在！");
                 alert.setContentText("请使用正确的管理员账号");
                 alert.showAndWait();
-                //System.out.println("用户不存在");
             }
         }
         else {
             alert.setHeaderText("用户名或密码不能为空！");
             alert.setContentText("请检查确保您已经输入账号与密码");
             alert.showAndWait();
-            //System.out.println("用户名或密码不能为空");
         }
     }
 
     @FXML
     public void cancel(Event event){
         StageManager.primaryStage.close();
-    }
-
-    @FXML
-    public void rememberPassword(Event event){
-        System.out.println("记住密码");
     }
 
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TabPane?>
@@ -9,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scaudachuang.campus_navigation.fx.controller.ManagementViewController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scaudachuang.campus_navigation.fx.controller.ManagementViewController">
    <left>
       <VBox prefHeight="642.0" prefWidth="212.0" BorderPane.alignment="CENTER">
          <children>
@@ -46,14 +49,14 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="pane" prefHeight="645.0" prefWidth="856.0">
+            <Pane fx:id="pane" layoutX="13.0" prefHeight="645.0" prefWidth="843.0">
                <children>
-                  <Button fx:id="sent" layoutX="700.0" layoutY="500.0" mnemonicParsing="false" onAction="#sent" prefHeight="30.0" prefWidth="81.0" text="发布" visible="false"/>
-                  <Button fx:id="edit" layoutX="550.0" layoutY="500.0" mnemonicParsing="false" onAction="#edit" prefHeight="30.0" prefWidth="81.0" text="编辑" visible="false"/>
+                  <Button fx:id="sent" layoutX="700.0" layoutY="500.0" mnemonicParsing="false" onAction="#sent" prefHeight="30.0" prefWidth="81.0" text="发布" visible="false" />
+                  <Button fx:id="edit" layoutX="550.0" layoutY="500.0" mnemonicParsing="false" onAction="#edit" prefHeight="30.0" prefWidth="81.0" text="编辑" visible="false" />
                </children></Pane>
-            <TabPane fx:id="tabPane" layoutX="1.0" layoutY="2.0" prefHeight="637.0" prefWidth="858.0" tabClosingPolicy="UNAVAILABLE" />
+            <TabPane fx:id="tabPane" layoutX="15.0" layoutY="2.0" prefHeight="637.0" prefWidth="844.0" tabClosingPolicy="UNAVAILABLE" />
          </children>
       </AnchorPane>
    </center>
