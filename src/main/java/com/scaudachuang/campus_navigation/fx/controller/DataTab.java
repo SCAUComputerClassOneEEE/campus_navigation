@@ -12,6 +12,8 @@ import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 import sun.security.krb5.internal.crypto.EType;
 
 import java.lang.reflect.Field;
@@ -19,16 +21,21 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
+
 public class DataTab<E> extends Tab {
     //泛型类
+    @Getter
     private final Class<?> EType;
     //TableView动态数据
+
+    @Getter
     private final ObservableList<E> eObservableList;
     //TableView
     private final TableView<E> tableView;
     //菜单栏
     private DataContextMenu contextMenu;
 
+    @Getter
     private Field[] fields;
 
     public DataTab(DataEnum.DataForm dataForm, List<E> eList) throws ClassNotFoundException {
@@ -44,7 +51,7 @@ public class DataTab<E> extends Tab {
         super.setContent(tableView);
         initTableColumns();
         //初始化ContextMenu
-        contextMenu = new DataContextMenu();
+        contextMenu = new DataContextMenu(this);
         initContextMenu();
     }
     
@@ -91,10 +98,18 @@ public class DataTab<E> extends Tab {
         private MenuItem lookup = new MenuItem("查看");
         private MenuItem modify = new MenuItem("修改");
         private MenuItem delete = new MenuItem("删除");
+        private DataTab dataTab;
 
-        public DataContextMenu(){
+        public DataContextMenu(DataTab dataTab){
+            this.dataTab = dataTab;
             delete.setOnAction(event -> deleteElement());
-            add.setOnAction(event -> addElement());
+            add.setOnAction(event -> {
+                try {
+                    addElement();
+                } catch (IllegalAccessException | InstantiationException e) {
+                    e.printStackTrace();
+                }
+            });
             lookup.setOnAction(event -> checkElement());
             modify.setOnAction(event -> updateElement());
             super.getItems().addAll(add,delete,lookup,modify);
@@ -102,12 +117,22 @@ public class DataTab<E> extends Tab {
         /*
         对eObservableList的增删改查操作
          */
-        public void addElement(){
+        public void addElement() throws IllegalAccessException, InstantiationException {
             GridPane gridPane = new GridPane();
             Stage stage = new Stage();
             Scene scene = new Scene(gridPane);
+            stage.setScene(scene);
             stage.show();
-            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("添加行");
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataTab.getFields()[i];
+                Label label = new Label(field.getName());
+                gridPane.add(label,0,i);
+            }
+            Class<?> dataClass = dataTab.getEType();
+            Object o = dataClass.newInstance();
+
+//            stage.initModality(Modality.APPLICATION_MODAL);
         }
         public void deleteElement(){
 
