@@ -5,9 +5,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import sun.security.krb5.internal.crypto.EType;
 
 import java.lang.reflect.Field;
@@ -99,7 +103,11 @@ public class DataTab<E> extends Tab {
         对eObservableList的增删改查操作
          */
         public void addElement(){
-
+            GridPane gridPane = new GridPane();
+            Stage stage = new Stage();
+            Scene scene = new Scene(gridPane);
+            stage.show();
+            stage.initModality(Modality.APPLICATION_MODAL);
         }
         public void deleteElement(){
 
