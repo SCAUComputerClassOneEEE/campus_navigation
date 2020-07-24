@@ -22,9 +22,10 @@ public class DataTab<E> extends Tab {
     private final ObservableList<E> eObservableList;
     //TableView
     private final TableView<E> tableView;
-
     //菜单栏
-    private ContextMenu contextMenu;
+    private DataContextMenu contextMenu;
+
+    private Field[] fields;
 
     public DataTab(DataEnum.DataForm dataForm, List<E> eList) throws ClassNotFoundException {
 
@@ -38,11 +39,14 @@ public class DataTab<E> extends Tab {
         tableView = new TableView<>(eObservableList);
         super.setContent(tableView);
         initTableColumns();
-
+        //初始化ContextMenu
+        contextMenu = new DataContextMenu();
+        initContextMenu();
     }
+    
     private void initTableColumns(){
         //获得泛型类的数据域
-        Field[] fields = EType.getDeclaredFields();
+        fields = EType.getDeclaredFields();
         for (Field field : fields){
             //变量名
             String columnName = field.getName();
@@ -66,45 +70,45 @@ public class DataTab<E> extends Tab {
             });
             //eTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         }
-
-        //初始化菜单
-        initContextMenu();
-        //为TableView增加监听器
-        tableView.setOnContextMenuRequested(event ->contextMenu.show(tableView, event.getScreenX(), event.getScreenY()));
-        tableView.setOnMouseClicked(event -> {
-            this.contextMenu.hide();
-        });
-        tableView.setEditable(true);
     }
 
     private void initContextMenu(){
-        this.contextMenu = new ContextMenu();
-        MenuItem add = new MenuItem("添加");
-        MenuItem delete = new MenuItem("删除");
-        MenuItem lookup = new MenuItem("查看");
-        delete.setOnAction(event -> {
-            deleteElement();
+        //为TableView增加监听器
+        tableView.setOnContextMenuRequested(event ->
+                contextMenu.show(tableView, event.getScreenX(), event.getScreenY())
+        );
+        tableView.setOnMouseClicked(event -> {
+            this.contextMenu.hide();
         });
-        add.setOnAction(event -> {
-            addElement();
-        });
-        this.contextMenu.getItems().addAll(add,delete,lookup);
     }
 
-    /*
-    对eObservableList的增删改查操作
-     */
-    public void addElement(){
-        eObservableList.add(eObservableList.get(eObservableList.size()-1));
-    }
-    public void deleteElement(){
-        eObservableList.remove(tableView.getSelectionModel().getSelectedItem());
+    private static class DataContextMenu extends ContextMenu {
+        private MenuItem add = new MenuItem("添加");
+        private MenuItem lookup = new MenuItem("查看");
+        private MenuItem modify = new MenuItem("修改");
+        private MenuItem delete = new MenuItem("删除");
 
-    }
-    public void checkElement(){
+        public DataContextMenu(){
+            delete.setOnAction(event -> deleteElement());
+            add.setOnAction(event -> addElement());
+            lookup.setOnAction(event -> checkElement());
+            modify.setOnAction(event -> updateElement());
+            super.getItems().addAll(add,delete,lookup,modify);
+        }
+        /*
+        对eObservableList的增删改查操作
+         */
+        public void addElement(){
 
-    }
-    public void updateElement(){
+        }
+        public void deleteElement(){
 
+        }
+        public void checkElement(){
+
+        }
+        public void updateElement(){
+
+        }
     }
 }
