@@ -98,9 +98,9 @@ public class DataTab<E> extends Tab {
         private MenuItem lookup = new MenuItem("查看");
         private MenuItem modify = new MenuItem("修改");
         private MenuItem delete = new MenuItem("删除");
-        private DataTab dataTab;
+        private DataTab<?> dataTab;
 
-        public DataContextMenu(DataTab dataTab){
+        public DataContextMenu(DataTab<?> dataTab){
             this.dataTab = dataTab;
             delete.setOnAction(event -> deleteElement());
             add.setOnAction(event -> {

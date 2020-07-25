@@ -54,8 +54,8 @@ public class ManagementViewController implements Initializable {
     /**
      * 或者用监听器监听Map的改变
      */
-    private final Map<DataEnum.DataForm, DataTab> tabMap = new HashMap<>();
-    private DataTab dataTab;
+    private final Map<DataEnum.DataForm, DataTab<?>> tabMap = new HashMap<>();
+    private DataTab<?> dataTab;
     private TextArea textArea;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -90,10 +90,10 @@ public class ManagementViewController implements Initializable {
             tabPane.getSelectionModel().select(tabMap.get(dataForm));
         }else {
             switch (dataForm){
-                case Admin:{dataTab = new DataTab(dataForm,adminService.findAll());break;}
-                case Building:{dataTab = new DataTab(dataForm,buildingService.finAll());break;}
-                case Comment:{dataTab = new DataTab(dataForm,commentService.findAll());break;}
-                case User:{dataTab = new DataTab(dataForm,userService.findAll());break;}
+                case Admin:{dataTab = new DataTab<>(dataForm,adminService.findAll());break;}
+                case Building:{dataTab = new DataTab<>(dataForm,buildingService.finAll());break;}
+                case Comment:{dataTab = new DataTab<>(dataForm,commentService.findAll());break;}
+                case User:{dataTab = new DataTab<>(dataForm,userService.findAll());break;}
             }
             tabPane.getTabs().add(dataTab);
             tabPane.getSelectionModel().select(dataTab);
