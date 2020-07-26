@@ -81,13 +81,24 @@ public class DataTab<E> extends Tab {
                 }
                 return null;
             });
-            //eTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         }
     }
 
     private void initContextMenu(){
+
+        //User表不可新增
+        if(this.getEType().getSimpleName().equals("User")){
+            contextMenu.add.setDisable(true);
+        }
+
+        //评论表不可修改
+        if(this.getEType().getSimpleName().equals("Comment")){
+            contextMenu.modify.setDisable(true);
+        }
+
         //为TableView增加监听器
         tableView.setOnContextMenuRequested(event -> {
+            //此处用于判断是否有数据项被选中，并修改对应按钮的可用性
             if(tableView.getSelectionModel().getSelectedItem()==null){
                 contextMenu.delete.setDisable(true);
                 contextMenu.lookup.setDisable(true);
@@ -96,12 +107,23 @@ public class DataTab<E> extends Tab {
             else {
                 contextMenu.delete.setDisable(false);
                 contextMenu.lookup.setDisable(false);
-                contextMenu.modify.setDisable(false);
+                if(!this.getEType().getSimpleName().equals("Comment")){
+                    contextMenu.modify.setDisable(false);
+                }
             }
             contextMenu.show(tableView, event.getScreenX(), event.getScreenY());
         });
 
         tableView.setOnMouseClicked(event -> {
+            if(event.getClickCount()==2){
+                if(tableView.getSelectionModel().getSelectedItem()!=null){
+                    try {
+                        this.contextMenu.checkElement();
+                    } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
             this.contextMenu.hide();
         });
     }
