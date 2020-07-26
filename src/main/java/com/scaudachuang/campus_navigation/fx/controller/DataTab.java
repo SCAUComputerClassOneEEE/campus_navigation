@@ -164,6 +164,7 @@ public class DataTab<E> extends Tab {
 
                     Method method = dataClass.getMethod(methodName,field.getType());
                     method.invoke(o,((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText());
+                    //两个数据更新，view和database
                     }
                  } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                      e.printStackTrace();
@@ -212,6 +213,13 @@ public class DataTab<E> extends Tab {
 
         }
 
+        /**
+         *
+         * @param row 行
+         * @param column 列
+         * @param gridPane gugubird
+         * @return 节点
+         */
         public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
             Node result = null;
             ObservableList<Node> childrens = gridPane.getChildren();

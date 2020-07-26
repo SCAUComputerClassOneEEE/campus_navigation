@@ -30,11 +30,7 @@ class CampusNavigationApplicationTests {
 
     @Test
     void iocTest() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, ClassNotFoundException, InstantiationException, NoSuchFieldException {
-//        Page<Comment> commentList = commentService.findByPage(0,3,1);
-//        System.out.println(commentList.getSize());
-//        for (Comment comment : commentList){
-//            System.out.println(comment.getBuilding().getName());
-//        }
+
         Class<?> c = Class.forName("com.scaudachuang.campus_navigation.entity.Admin");
         Object o = c.newInstance();
         //获取名字
