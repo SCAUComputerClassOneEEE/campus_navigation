@@ -1,10 +1,12 @@
 package com.scaudachuang.campus_navigation.fx.controller;
 
+import com.scaudachuang.campus_navigation.entity.Admin;
 import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -85,9 +87,20 @@ public class DataTab<E> extends Tab {
 
     private void initContextMenu(){
         //为TableView增加监听器
-        tableView.setOnContextMenuRequested(event ->
-                contextMenu.show(tableView, event.getScreenX(), event.getScreenY())
-        );
+        tableView.setOnContextMenuRequested(event -> {
+            if(tableView.getSelectionModel().getSelectedItem()==null){
+                contextMenu.delete.setDisable(true);
+                contextMenu.lookup.setDisable(true);
+                contextMenu.modify.setDisable(true);
+            }
+            else {
+                contextMenu.delete.setDisable(false);
+                contextMenu.lookup.setDisable(false);
+                contextMenu.modify.setDisable(false);
+            }
+            contextMenu.show(tableView, event.getScreenX(), event.getScreenY());
+        });
+
         tableView.setOnMouseClicked(event -> {
             this.contextMenu.hide();
         });
@@ -110,7 +123,13 @@ public class DataTab<E> extends Tab {
                     e.printStackTrace();
                 }
             });
-            lookup.setOnAction(event -> checkElement());
+            lookup.setOnAction(event -> {
+                try {
+                    checkElement();
+                }catch (IllegalAccessException|NoSuchMethodException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            });
             modify.setOnAction(event -> updateElement());
             super.getItems().addAll(add,delete,lookup,modify);
         }
@@ -122,26 +141,89 @@ public class DataTab<E> extends Tab {
             Stage stage = new Stage();
             Scene scene = new Scene(gridPane);
             stage.setScene(scene);
-            stage.show();
             stage.setTitle("添加行");
+            stage.show();
             for (int i = 0; i < dataTab.getFields().length; i++){
                 Field field = dataTab.getFields()[i];
                 Label label = new Label(field.getName());
                 gridPane.add(label,0,i);
+                TextField textField = new TextField();
+                gridPane.add(textField,1,i);
             }
-            Class<?> dataClass = dataTab.getEType();
-            Object o = dataClass.newInstance();
+            Button add = new Button("添加");
+            Button cancel = new Button("取消");
 
-//            stage.initModality(Modality.APPLICATION_MODAL);
+            add.setOnAction(event -> {
+                try {
+                    Class<?> dataClass = dataTab.getEType();
+                    Object o = dataClass.newInstance();
+                    for (int i = 0; i < dataTab.getFields().length; i++){
+                    Field field = dataClass.getDeclaredFields()[i];
+                    String name = field.getName();
+                    String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+
+                    Method method = dataClass.getMethod(methodName,field.getType());
+                    method.invoke(o,((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText());
+                    }
+                 } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                     e.printStackTrace();
+                 }
+            });
+            gridPane.add(add,2,8);
         }
         public void deleteElement(){
-
+            dataTab.eObservableList.remove(dataTab.tableView.getSelectionModel().getSelectedItem());
         }
-        public void checkElement(){
-
+        //查看数据项
+        public void checkElement() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+            GridPane gridPane = new GridPane();
+            gridPane.setPrefSize(400,400);
+            Stage stage = new Stage();
+            Scene scene = new Scene(gridPane);
+            stage.setScene(scene);
+            stage.setTitle("查看");
+            stage.show();
+            //添加属性框
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataTab.getFields()[i];
+                Label label = new Label(field.getName()+":");
+                gridPane.add(label,0,i);
+            }
+            Class<?> dataClass = dataTab.getEType();
+            Object o = dataTab.tableView.getSelectionModel().getSelectedItem();
+            //添加数据域
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataClass.getDeclaredFields()[i];
+                String name = field.getName();
+                String methodName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+                Method method = dataClass.getMethod(methodName);
+                TextField textField = new TextField();
+                textField.setText(method.invoke(o).toString());
+                textField.setEditable(false);
+                gridPane.add(textField,1,i);
+            }
+            Button button = new Button("确定");
+            button.setOnAction(event -> {
+                stage.close();
+            });
+            gridPane.add(button,2,8);
         }
         public void updateElement(){
 
+        }
+
+        public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
+            Node result = null;
+            ObservableList<Node> childrens = gridPane.getChildren();
+
+            for (Node node : childrens) {
+                if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+                    result = node;
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }
