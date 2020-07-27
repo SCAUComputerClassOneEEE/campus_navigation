@@ -18,10 +18,11 @@ import javafx.scene.layout.VBox;
 import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import javax.swing.border.EmptyBorder;
+import java.io.*;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.text.FieldPosition;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @FXMLController
 @Component
@@ -57,6 +58,7 @@ public class ManagementViewController implements Initializable {
     private final Map<DataEnum.DataForm, DataTab<?>> tabMap = new HashMap<>();
     private DataTab<?> dataTab;
     private TextArea textArea;
+    private String notice;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
@@ -80,8 +82,18 @@ public class ManagementViewController implements Initializable {
         textArea.setEditable(true);
     }
     @FXML
-    private void sent(){//点击发布，保存文本内容，并将textArea设置为不可编辑状态
+    private void sent() throws IOException {//点击发布，保存文本内容，并将textArea设置为不可编辑状态
         textArea.setEditable(false);
+        notice = textArea.getText();
+        Date date = new Date();
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String textContent = sf.format(date)+"\n"+notice+"\n";
+        System.out.println(textContent);
+        File file = new File(System.getProperty("user.dir") +"\\src\\main\\resources\\NoticeFile\\notice");
+        FileWriter fileWriter = new FileWriter(file,true);
+        fileWriter.write(textContent);
+        fileWriter.flush();
+        fileWriter.close();
     }
 
 
