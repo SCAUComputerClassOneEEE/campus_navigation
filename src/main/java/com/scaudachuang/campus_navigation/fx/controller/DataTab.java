@@ -1,13 +1,21 @@
 package com.scaudachuang.campus_navigation.fx.controller;
 
+import com.scaudachuang.campus_navigation.entity.Admin;
 import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 import sun.security.krb5.internal.crypto.EType;
 
 import java.lang.reflect.Field;
@@ -15,16 +23,22 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
+
 public class DataTab<E> extends Tab {
     //泛型类
+    @Getter
     private final Class<?> EType;
     //TableView动态数据
+
+    @Getter
     private final ObservableList<E> eObservableList;
     //TableView
     private final TableView<E> tableView;
-
     //菜单栏
-    private ContextMenu contextMenu;
+    private DataContextMenu contextMenu;
+
+    @Getter
+    private Field[] fields;
 
     public DataTab(DataEnum.DataForm dataForm, List<E> eList) throws ClassNotFoundException {
 
@@ -38,11 +52,14 @@ public class DataTab<E> extends Tab {
         tableView = new TableView<>(eObservableList);
         super.setContent(tableView);
         initTableColumns();
-
+        //初始化ContextMenu
+        contextMenu = new DataContextMenu(this);
+        initContextMenu();
     }
+    
     private void initTableColumns(){
         //获得泛型类的数据域
-        Field[] fields = EType.getDeclaredFields();
+        fields = EType.getDeclaredFields();
         for (Field field : fields){
             //变量名
             String columnName = field.getName();
@@ -64,47 +81,179 @@ public class DataTab<E> extends Tab {
                 }
                 return null;
             });
-            eTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         }
-
-        //初始化菜单
-        initContextMenu();
-        //为TableView增加监听器
-        tableView.setOnContextMenuRequested(event ->contextMenu.show(tableView, event.getScreenX(), event.getScreenY()));
-        tableView.setOnMouseClicked(event -> {
-            this.contextMenu.hide();
-        });
-        tableView.setEditable(true);
     }
 
     private void initContextMenu(){
-        this.contextMenu = new ContextMenu();
-        MenuItem add = new MenuItem("添加");
-        MenuItem delete = new MenuItem("删除");
-        MenuItem lookup = new MenuItem("查看");
-        delete.setOnAction(event -> {
-            deleteElement();
+
+        //User表不可新增
+        if(this.getEType().getSimpleName().equals("User")){
+            contextMenu.add.setDisable(true);
+        }
+
+        //评论表不可修改
+        if(this.getEType().getSimpleName().equals("Comment")){
+            contextMenu.modify.setDisable(true);
+        }
+
+        //为TableView增加监听器
+        tableView.setOnContextMenuRequested(event -> {
+            //此处用于判断是否有数据项被选中，并修改对应按钮的可用性
+            if(tableView.getSelectionModel().getSelectedItem()==null){
+                contextMenu.delete.setDisable(true);
+                contextMenu.lookup.setDisable(true);
+                contextMenu.modify.setDisable(true);
+            }
+            else {
+                contextMenu.delete.setDisable(false);
+                contextMenu.lookup.setDisable(false);
+                if(!this.getEType().getSimpleName().equals("Comment")){
+                    contextMenu.modify.setDisable(false);
+                }
+            }
+            contextMenu.show(tableView, event.getScreenX(), event.getScreenY());
         });
-        add.setOnAction(event -> {
-            addElement();
+
+        tableView.setOnMouseClicked(event -> {
+            if(event.getClickCount()==2){
+                if(tableView.getSelectionModel().getSelectedItem()!=null){
+                    try {
+                        this.contextMenu.checkElement();
+                    } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            this.contextMenu.hide();
         });
-        this.contextMenu.getItems().addAll(add,delete,lookup);
     }
 
-    /*
-    对eObservableList的增删改查操作
-     */
-    public void addElement(){
-        eObservableList.add(eObservableList.get(eObservableList.size()-1));
-    }
-    public void deleteElement(){
-        eObservableList.remove(tableView.getSelectionModel().getSelectedItem());
+    private static class DataContextMenu extends ContextMenu {
+        private MenuItem add = new MenuItem("添加");
+        private MenuItem lookup = new MenuItem("查看");
+        private MenuItem modify = new MenuItem("修改");
+        private MenuItem delete = new MenuItem("删除");
+        private DataTab<?> dataTab;
 
-    }
-    public void checkElement(){
+        public DataContextMenu(DataTab<?> dataTab){
+            this.dataTab = dataTab;
+            delete.setOnAction(event -> deleteElement());
+            add.setOnAction(event -> {
+                try {
+                    addElement();
+                } catch (IllegalAccessException | InstantiationException e) {
+                    e.printStackTrace();
+                }
+            });
+            lookup.setOnAction(event -> {
+                try {
+                    checkElement();
+                }catch (IllegalAccessException|NoSuchMethodException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            });
+            modify.setOnAction(event -> updateElement());
+            super.getItems().addAll(add,delete,lookup,modify);
+        }
+        /*
+        对eObservableList的增删改查操作
+         */
+        public void addElement() throws IllegalAccessException, InstantiationException {
+            GridPane gridPane = new GridPane();
+            Stage stage = new Stage();
+            Scene scene = new Scene(gridPane);
+            stage.setScene(scene);
+            stage.setTitle("添加行");
+            stage.show();
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataTab.getFields()[i];
+                Label label = new Label(field.getName());
+                gridPane.add(label,0,i);
+                TextField textField = new TextField();
+                gridPane.add(textField,1,i);
+            }
+            Button add = new Button("添加");
+            Button cancel = new Button("取消");
 
-    }
-    public void updateElement(){
+            add.setOnAction(event -> {
+                try {
+                    Class<?> dataClass = dataTab.getEType();
+                    Object o = dataClass.newInstance();
+                    for (int i = 0; i < dataTab.getFields().length; i++){
+                    Field field = dataClass.getDeclaredFields()[i];
+                    String name = field.getName();
+                    String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
 
+                    Method method = dataClass.getMethod(methodName,field.getType());
+                    method.invoke(o,((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText());
+                    //两个数据更新，view和database
+                    }
+                 } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                     e.printStackTrace();
+                 }
+            });
+            gridPane.add(add,2,8);
+        }
+        public void deleteElement(){
+            dataTab.eObservableList.remove(dataTab.tableView.getSelectionModel().getSelectedItem());
+        }
+        //查看数据项
+        public void checkElement() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+            GridPane gridPane = new GridPane();
+            gridPane.setPrefSize(400,400);
+            Stage stage = new Stage();
+            Scene scene = new Scene(gridPane);
+            stage.setScene(scene);
+            stage.setTitle("查看");
+            stage.show();
+            //添加属性框
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataTab.getFields()[i];
+                Label label = new Label(field.getName()+":");
+                gridPane.add(label,0,i);
+            }
+            Class<?> dataClass = dataTab.getEType();
+            Object o = dataTab.tableView.getSelectionModel().getSelectedItem();
+            //添加数据域
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataClass.getDeclaredFields()[i];
+                String name = field.getName();
+                String methodName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+                Method method = dataClass.getMethod(methodName);
+                TextField textField = new TextField();
+                textField.setText(method.invoke(o).toString());
+                textField.setEditable(false);
+                gridPane.add(textField,1,i);
+            }
+            Button button = new Button("确定");
+            button.setOnAction(event -> {
+                stage.close();
+            });
+            gridPane.add(button,2,8);
+        }
+        public void updateElement(){
+
+        }
+
+        /**
+         *
+         * @param row 行
+         * @param column 列
+         * @param gridPane gugubird
+         * @return 节点
+         */
+        public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
+            Node result = null;
+            ObservableList<Node> childrens = gridPane.getChildren();
+
+            for (Node node : childrens) {
+                if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+                    result = node;
+                    break;
+                }
+            }
+
+            return result;
+        }
     }
 }

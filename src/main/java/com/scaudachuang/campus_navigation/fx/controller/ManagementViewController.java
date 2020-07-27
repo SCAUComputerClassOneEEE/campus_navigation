@@ -48,13 +48,14 @@ public class ManagementViewController implements Initializable {
     private Button edit;
     @FXML
     private Button sent;
-
+    @FXML
+    private AnchorPane anchorPane;
 
     /**
      * 或者用监听器监听Map的改变
      */
-    private final Map<DataEnum.DataForm, DataTab> tabMap = new HashMap<>();
-    private DataTab dataTab;
+    private final Map<DataEnum.DataForm, DataTab<?>> tabMap = new HashMap<>();
+    private DataTab<?> dataTab;
     private TextArea textArea;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -73,14 +74,14 @@ public class ManagementViewController implements Initializable {
     @FXML
     private void User() throws ClassNotFoundException { displayTab(DataEnum.DataForm.User); }
     @FXML
-    private void Announcement() { displayNoticement(); }
+    private void Announcement() { displayNotice(); }
     @FXML
     private void edit(){//点击编辑按钮，将textArea设置成可编辑状态
-
+        textArea.setEditable(true);
     }
     @FXML
     private void sent(){//点击发布，保存文本内容，并将textArea设置为不可编辑状态
-
+        textArea.setEditable(false);
     }
 
 
@@ -89,10 +90,10 @@ public class ManagementViewController implements Initializable {
             tabPane.getSelectionModel().select(tabMap.get(dataForm));
         }else {
             switch (dataForm){
-                case Admin:{dataTab = new DataTab(dataForm,adminService.findAll());break;}
-                case Building:{dataTab = new DataTab(dataForm,buildingService.finAll());break;}
-                case Comment:{dataTab = new DataTab(dataForm,commentService.findAll());break;}
-                case User:{dataTab = new DataTab(dataForm,userService.findAll());break;}
+                case Admin:{dataTab = new DataTab<>(dataForm,adminService.findAll());break;}
+                case Building:{dataTab = new DataTab<>(dataForm,buildingService.finAll());break;}
+                case Comment:{dataTab = new DataTab<>(dataForm,commentService.findAll());break;}
+                case User:{dataTab = new DataTab<>(dataForm,userService.findAll());break;}
             }
             tabPane.getTabs().add(dataTab);
             tabPane.getSelectionModel().select(dataTab);
@@ -102,17 +103,17 @@ public class ManagementViewController implements Initializable {
     }
 
 
-    private void displayNoticement(){
-
+    private void displayNotice(){
+        anchorPane.getChildren().remove(tabPane);
         textArea.setPrefHeight(300);
         textArea.setPrefWidth(600);
         textArea.setLayoutX(100);
         textArea.setLayoutY(100);
-        textArea.setEditable(true);
+        textArea.setEditable(false);
         edit.setVisible(true);
         sent.setVisible(true);
         pane.getChildren().add(textArea);
-
+        textArea.appendText("这里发布我们的公告");
 
     }
 }
