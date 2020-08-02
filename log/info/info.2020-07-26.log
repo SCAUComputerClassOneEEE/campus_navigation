@@ -50,6 +50,10 @@
 2020-07-26 20:10:26 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
 2020-07-26 20:10:27 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
 2020-07-26 20:10:27 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.694 seconds (JVM running for 5.029)
+2020-07-26 20:25:50 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-26 20:25:50 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-07-26 20:25:50 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-07-26 20:25:50 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
 2020-07-26 21:08:58 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-T7CQOT6 with PID 14760 (started by sky in C:\Users\sky\Desktop\campus_navigation)
 2020-07-26 21:08:58 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
 2020-07-26 21:08:58 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
