@@ -22,6 +22,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -154,12 +155,21 @@ public class DataTab<E> extends Tab {
                     e.printStackTrace();
                 }
             });
-            modify.setOnAction(event -> updateElement());
+            modify.setOnAction(event -> {
+                try {
+                    updateElement();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException | NoSuchMethodException e) {
+                    e.printStackTrace();
+                }
+            });
             super.getItems().addAll(add,delete,lookup,modify);
         }
         /*
         对eObservableList的增删改查操作
          */
+        //添加新项
         public void addElement() throws IllegalAccessException, InstantiationException {
             //基础窗体
             GridPane gridPane = new GridPane();
@@ -172,7 +182,7 @@ public class DataTab<E> extends Tab {
             //添加数据标签与数据输入域
             for (int i = 0; i < dataTab.getFields().length; i++){
                 Field field = dataTab.getFields()[i];
-                Label label = new Label(field.getName());
+                Label label = new Label(field.getName()+":");
                 gridPane.add(label,0,i);
                 Node input = new TextField();
                 if(field.getType().getSimpleName().equals("Date"))
@@ -186,6 +196,138 @@ public class DataTab<E> extends Tab {
                 try {
                     Class<?> dataClass = dataTab.getEType();
                     Object o = dataClass.newInstance();//对应的数据对象
+                    for (int i = 0; i < dataTab.getFields().length; i++){
+                        //数据域
+                        Field field = dataClass.getDeclaredFields()[i];
+                        String name = field.getName();
+                        String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+
+                        //方法名
+                        Method method = dataClass.getMethod(methodName,field.getType());
+
+                        System.out.print(field.getType().getSimpleName()+":");
+                        if ("int".equals(field.getType().getSimpleName())){
+                            int data = Integer.parseInt(((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText());
+                            System.out.println(data);
+                            method.invoke(o,data);
+                        }
+                        else if("String".equals(field.getType().getSimpleName())){
+                            String data = ((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText();
+                            System.out.println(data);
+                            method.invoke(o,data);
+                        }
+                        else {
+                            Date data = new Date(((DatePicker)getNodeByRowColumnIndex(i,1,gridPane)).getValue().toEpochDay());
+                            System.out.println(data);
+                            method.invoke(o,data);
+                        }
+                        //两个数据更新，view和database
+                    }
+                 } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                     e.printStackTrace();
+                 }
+            });
+
+            cancel.setOnAction(event -> {
+                stage.close();
+            });
+            gridPane.add(add,2,8);
+            gridPane.add(cancel,3,8);
+        }
+
+        //删除选中项
+        public void deleteElement(){
+            dataTab.eObservableList.remove(dataTab.tableView.getSelectionModel().getSelectedItem());
+        }
+
+        //查看数据项
+        public void checkElement() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+            GridPane gridPane = new GridPane();
+            gridPane.setPrefSize(400,400);
+            Stage stage = new Stage();
+            Scene scene = new Scene(gridPane);
+            stage.setScene(scene);
+            stage.setTitle("查看");
+            stage.show();
+            //添加属性框
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataTab.getFields()[i];
+                Label label = new Label(field.getName()+":");
+                gridPane.add(label,0,i);
+            }
+            Class<?> dataClass = dataTab.getEType();
+            Object o = dataTab.tableView.getSelectionModel().getSelectedItem();
+            //添加数据域
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataClass.getDeclaredFields()[i];
+                String name = field.getName();
+                String methodName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+                Method method = dataClass.getMethod(methodName);
+
+                if("Date".equals(field.getType().getSimpleName())){
+                    DatePicker datePicker = new DatePicker();
+                    datePicker.setDisable(true);
+                    Timestamp date = (Timestamp) method.invoke(o);
+                    datePicker.setValue(LocalDate.of(date.getYear(), date.getMonth(), date.getDay()));
+                    gridPane.add(datePicker,1,i);
+                }else {
+                    TextField textField = new TextField();
+                    textField.setText(method.invoke(o).toString());
+                    textField.setEditable(false);
+                    gridPane.add(textField,1,i);
+                }
+
+            }
+
+            Button button = new Button("确定");
+            button.setOnAction(event -> {
+                stage.close();
+            });
+            gridPane.add(button,2,8);
+        }
+
+        //修改选中项
+        public void updateElement() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+            //基础窗体
+            GridPane gridPane = new GridPane();
+            Stage stage = new Stage();
+            Scene scene = new Scene(gridPane);
+            stage.setScene(scene);
+            stage.setTitle("修改");
+            stage.show();
+
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataTab.getFields()[i];
+                Label label = new Label(field.getName()+":");
+                gridPane.add(label,0,i);
+            }
+            Class<?> dataClass = dataTab.getEType();
+            Object o = dataTab.tableView.getSelectionModel().getSelectedItem();
+            //添加数据域
+            for (int i = 0; i < dataTab.getFields().length; i++){
+                Field field = dataClass.getDeclaredFields()[i];
+                String name = field.getName();
+                String methodName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+                Method method = dataClass.getMethod(methodName);
+
+                if("Date".equals(field.getType().getSimpleName())){
+                    DatePicker datePicker = new DatePicker();
+                    Timestamp date = (Timestamp) method.invoke(o);
+                    datePicker.setValue(LocalDate.of(date.getYear(), date.getMonth(), date.getDay()));
+                    gridPane.add(datePicker,1,i);
+                }else {
+                    TextField textField = new TextField();
+                    textField.setText(method.invoke(o).toString());
+                    gridPane.add(textField,1,i);
+                }
+
+            }
+
+            Button yes = new Button("确定");
+            Button cancel = new Button("取消");
+
+            yes.setOnAction(event -> {
+                try {
                     for (int i = 0; i < dataTab.getFields().length; i++){
                         //数据域
                         Field field = dataClass.getDeclaredFields()[i];
@@ -214,51 +356,17 @@ public class DataTab<E> extends Tab {
                         }
                         //两个数据更新，view和database
                     }
-                 } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-                     e.printStackTrace();
-                 }
+                } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
             });
-            gridPane.add(add,2,8);
-        }
-        public void deleteElement(){
-            dataTab.eObservableList.remove(dataTab.tableView.getSelectionModel().getSelectedItem());
-        }
-        //查看数据项
-        public void checkElement() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-            GridPane gridPane = new GridPane();
-            gridPane.setPrefSize(400,400);
-            Stage stage = new Stage();
-            Scene scene = new Scene(gridPane);
-            stage.setScene(scene);
-            stage.setTitle("查看");
-            stage.show();
-            //添加属性框
-            for (int i = 0; i < dataTab.getFields().length; i++){
-                Field field = dataTab.getFields()[i];
-                Label label = new Label(field.getName()+":");
-                gridPane.add(label,0,i);
-            }
-            Class<?> dataClass = dataTab.getEType();
-            Object o = dataTab.tableView.getSelectionModel().getSelectedItem();
-            //添加数据域
-            for (int i = 0; i < dataTab.getFields().length; i++){
-                Field field = dataClass.getDeclaredFields()[i];
-                String name = field.getName();
-                String methodName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
-                Method method = dataClass.getMethod(methodName);
-                TextField textField = new TextField();
-                textField.setText(method.invoke(o).toString());
-                textField.setEditable(false);
-                gridPane.add(textField,1,i);
-            }
-            Button button = new Button("确定");
-            button.setOnAction(event -> {
+
+            cancel.setOnAction(event -> {
                 stage.close();
             });
-            gridPane.add(button,2,8);
-        }
-        public void updateElement(){
 
+            gridPane.add(yes,2,8);
+            gridPane.add(cancel,3,8);
         }
 
         /**
