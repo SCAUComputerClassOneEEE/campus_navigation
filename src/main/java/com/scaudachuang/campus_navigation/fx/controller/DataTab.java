@@ -21,6 +21,8 @@ import sun.security.krb5.internal.crypto.EType;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -159,18 +161,23 @@ public class DataTab<E> extends Tab {
         对eObservableList的增删改查操作
          */
         public void addElement() throws IllegalAccessException, InstantiationException {
+            //基础窗体
             GridPane gridPane = new GridPane();
             Stage stage = new Stage();
             Scene scene = new Scene(gridPane);
             stage.setScene(scene);
             stage.setTitle("添加行");
             stage.show();
+
+            //添加数据标签与数据输入域
             for (int i = 0; i < dataTab.getFields().length; i++){
                 Field field = dataTab.getFields()[i];
                 Label label = new Label(field.getName());
                 gridPane.add(label,0,i);
-                TextField textField = new TextField();
-                gridPane.add(textField,1,i);
+                Node input = new TextField();
+                if(field.getType().getSimpleName().equals("Date"))
+                    input = new DatePicker();
+                gridPane.add(input,1,i);
             }
             Button add = new Button("添加");
             Button cancel = new Button("取消");
@@ -178,15 +185,34 @@ public class DataTab<E> extends Tab {
             add.setOnAction(event -> {
                 try {
                     Class<?> dataClass = dataTab.getEType();
-                    Object o = dataClass.newInstance();
+                    Object o = dataClass.newInstance();//对应的数据对象
                     for (int i = 0; i < dataTab.getFields().length; i++){
-                    Field field = dataClass.getDeclaredFields()[i];
-                    String name = field.getName();
-                    String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+                        //数据域
+                        Field field = dataClass.getDeclaredFields()[i];
+                        String name = field.getName();
+                        String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
 
-                    Method method = dataClass.getMethod(methodName,field.getType());
-                    method.invoke(o,((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText());
-                    //两个数据更新，view和database
+                        //方法名
+                        Method method = dataClass.getMethod(methodName,field.getType());
+
+
+                        System.out.print(field.getType().getSimpleName()+":");
+                        if ("int".equals(field.getType().getSimpleName())){
+                            int data = Integer.parseInt(((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText());
+                            System.out.println(data);
+                            method.invoke(o,data);
+                        }
+                        else if("String".equals(field.getType().getSimpleName())){
+                            String data = ((TextField)getNodeByRowColumnIndex(i,1,gridPane)).getText();
+                            System.out.println(data);
+                            method.invoke(o,data);
+                        }
+                        else {
+                            Date data = new Date(((DatePicker)getNodeByRowColumnIndex(i,1,gridPane)).getValue().toEpochDay());
+                            System.out.println(data);
+                            method.invoke(o,data);
+                        }
+                        //两个数据更新，view和database
                     }
                  } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                      e.printStackTrace();
