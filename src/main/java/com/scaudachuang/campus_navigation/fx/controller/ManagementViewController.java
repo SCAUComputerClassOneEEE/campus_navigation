@@ -6,6 +6,7 @@ import com.scaudachuang.campus_navigation.service.BuildingService;
 import com.scaudachuang.campus_navigation.service.CommentService;
 import com.scaudachuang.campus_navigation.service.UserService;
 import de.felixroske.jfxsupport.FXMLController;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,10 +47,6 @@ public class ManagementViewController implements Initializable {
     @FXML
     private VBox vBox2;
     @FXML
-    private Button edit;
-    @FXML
-    private Button sent;
-    @FXML
     private AnchorPane anchorPane;
 
     /**
@@ -59,6 +56,8 @@ public class ManagementViewController implements Initializable {
     private DataTab<?> dataTab;
     private TextArea textArea;
     private String notice;
+    private Button edit;
+    private Button sent;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
@@ -77,11 +76,11 @@ public class ManagementViewController implements Initializable {
     private void User() throws ClassNotFoundException { displayTab(DataEnum.DataForm.User); }
     @FXML
     private void Announcement() { displayNotice(); }
-    @FXML
+
     private void edit(){//点击编辑按钮，将textArea设置成可编辑状态
         textArea.setEditable(true);
     }
-    @FXML
+
     private void sent() throws IOException {//点击发布，保存文本内容，并将textArea设置为不可编辑状态
         textArea.setEditable(false);
         notice = textArea.getText();
@@ -96,8 +95,21 @@ public class ManagementViewController implements Initializable {
         fileWriter.close();
     }
 
+    private void paneClosing(){
+        if(pane.isVisible()){
+            pane.getChildren().clear();
+            pane.setVisible(false);
+        }
+        if(tabPane.isVisible()){
+            tabPane.setVisible(false);
+        }
+    }
+
+
 
     private void displayTab(DataEnum.DataForm dataForm) throws ClassNotFoundException {
+        paneClosing();
+       tabPane.setVisible(true);
         if (tabMap.containsKey(dataForm)){
             tabPane.getSelectionModel().select(tabMap.get(dataForm));
         }else {
@@ -115,8 +127,32 @@ public class ManagementViewController implements Initializable {
     }
 
 
+
     private void displayNotice(){
-        anchorPane.getChildren().remove(tabPane);
+        paneClosing();
+        pane.setVisible(true);
+        edit = new Button("编辑");
+        sent = new Button("发布");
+        sent.setLayoutY(500);
+        sent.setLayoutX(700);
+        sent.setPrefWidth(81);
+        sent.setPrefHeight(30);
+        sent.setOnAction(event -> {
+            try {
+                sent();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        edit.setText("编辑");
+        edit.setLayoutY(500);
+        edit.setLayoutX(550);
+        edit.setPrefWidth(81);
+        edit.setPrefHeight(30);
+        edit.setOnAction(event -> edit());
+
+
         textArea.setPrefHeight(300);
         textArea.setPrefWidth(600);
         textArea.setLayoutX(100);
@@ -124,8 +160,10 @@ public class ManagementViewController implements Initializable {
         textArea.setEditable(false);
         edit.setVisible(true);
         sent.setVisible(true);
-        pane.getChildren().add(textArea);
-        textArea.appendText("这里发布我们的公告");
+        pane.getChildren().addAll(textArea,edit,sent);
+        if(textArea.getText().isEmpty()) {
+            textArea.appendText("这里发布我们的公告");
+        }
 
     }
 }
