@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-08-02 20:03:19 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on LAPTOP-QTLAHKK8 with PID 26488 (started by 123456 in D:\IDEA\campus_navigation)
 2020-08-02 20:03:19 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
 2020-08-02 20:03:19 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
@@ -22,3 +23,429 @@
 2020-08-02 20:03:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
 2020-08-02 20:03:39 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
 2020-08-02 20:03:39 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 21.115 seconds (JVM running for 24.114)
+=======
+2020-08-02 20:20:41 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 8564 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:20:41 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:20:41 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 50ms. Found 4 JPA repository interfaces.
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:20:42 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1196 ms
+2020-08-02 20:20:43 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:20:46 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:20:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:20:47 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:20:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:20:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 6.857 seconds (JVM running for 9.174)
+2020-08-02 20:21:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 12808 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:21:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:21:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 49ms. Found 4 JPA repository interfaces.
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 893 ms
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:21:38 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:21:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:21:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:21:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:21:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:21:39 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:21:40 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:21:40 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:21:40 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:21:40 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.673 seconds (JVM running for 5.135)
+2020-08-02 20:22:11 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:22:11 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:22:11 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:22:11 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 20:23:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 14468 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:23:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:23:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:23:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 48ms. Found 4 JPA repository interfaces.
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 943 ms
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:23:02 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:23:03 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:23:03 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:23:03 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:23:03 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:23:03 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:23:04 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:23:04 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:23:04 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.786 seconds (JVM running for 5.299)
+2020-08-02 20:23:22 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:23:22 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:23:22 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:23:22 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 5824 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 45ms. Found 4 JPA repository interfaces.
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:23:56 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 899 ms
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:23:57 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:23:58 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:23:58 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:23:58 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:23:58 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:23:59 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:23:59 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.688 seconds (JVM running for 5.242)
+2020-08-02 20:24:14 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:24:14 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:24:14 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:24:14 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 20:29:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 1208 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:29:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:29:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:29:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:29:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 48ms. Found 4 JPA repository interfaces.
+2020-08-02 20:29:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 900 ms
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:29:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:29:47 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:29:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:29:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:29:47 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:29:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:29:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.8 seconds (JVM running for 5.175)
+2020-08-02 20:30:07 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:30:07 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:30:07 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:30:07 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 15240 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 49ms. Found 4 JPA repository interfaces.
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:31:26 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 911 ms
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:31:27 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:31:28 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:31:28 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:31:28 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:31:28 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:31:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:31:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.733 seconds (JVM running for 5.346)
+2020-08-02 20:32:30 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:32:30 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:32:30 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:32:30 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 20:33:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 1880 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:33:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:33:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:33:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:33:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 45ms. Found 4 JPA repository interfaces.
+2020-08-02 20:33:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 927 ms
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:33:48 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:33:49 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:33:49 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:33:49 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:33:49 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:33:50 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:33:50 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.806 seconds (JVM running for 5.056)
+2020-08-02 20:46:18 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 12624 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:46:18 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:46:18 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:46:18 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:46:18 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 47ms. Found 4 JPA repository interfaces.
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 868 ms
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:46:19 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:46:20 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:46:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:46:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:46:20 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:46:21 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:46:21 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.59 seconds (JVM running for 5.107)
+2020-08-02 20:46:52 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:46:52 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:46:52 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:46:52 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 20:47:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 11032 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 20:47:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 20:47:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 20:47:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 20:47:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 55ms. Found 4 JPA repository interfaces.
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 963 ms
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 20:47:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 20:47:02 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 20:47:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:47:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:47:02 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 20:47:03 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 20:47:03 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.861 seconds (JVM running for 5.273)
+2020-08-02 20:47:14 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 20:47:14 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 20:47:14 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 20:47:14 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 21:03:07 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 2108 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:03:07 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:03:07 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 47ms. Found 4 JPA repository interfaces.
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 883 ms
+2020-08-02 21:03:08 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:03:09 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:03:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:03:10 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:03:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:03:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.729 seconds (JVM running for 5.248)
+2020-08-02 21:03:56 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:03:56 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:03:56 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 21:03:56 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 21:04:28 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 14488 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:04:28 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:04:28 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 52ms. Found 4 JPA repository interfaces.
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 915 ms
+2020-08-02 21:04:29 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:04:30 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:04:31 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:04:31 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:04:31 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:04:31 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.731 seconds (JVM running for 5.207)
+2020-08-02 21:05:28 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:05:28 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:05:28 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 21:05:28 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 21:07:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 4880 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:07:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:07:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:07:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:07:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 53ms. Found 4 JPA repository interfaces.
+2020-08-02 21:07:20 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1093 ms
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:07:21 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:07:22 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:07:22 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:07:22 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:07:22 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:07:23 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:07:23 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 4.016 seconds (JVM running for 5.485)
+2020-08-02 21:07:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 5792 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:07:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:07:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:07:37 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 51ms. Found 4 JPA repository interfaces.
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 971 ms
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:07:38 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:07:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:07:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:07:39 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:07:39 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:07:39 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:07:40 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:07:40 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:07:40 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.744 seconds (JVM running for 5.125)
+2020-08-02 21:10:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 12560 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:10:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:10:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:10:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:10:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 49ms. Found 4 JPA repository interfaces.
+2020-08-02 21:10:45 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 902 ms
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:10:46 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:10:47 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:10:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:10:47 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:10:47 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:10:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:10:48 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.711 seconds (JVM running for 5.09)
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 3532 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 48ms. Found 4 JPA repository interfaces.
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:15:00 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 974 ms
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:15:01 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:15:02 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:15:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:15:02 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:15:02 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:15:03 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:15:03 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.728 seconds (JVM running for 5.275)
+2020-08-02 21:15:41 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:15:41 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:15:41 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+2020-08-02 21:15:41 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 13984 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 55ms. Found 4 JPA repository interfaces.
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-02 21:22:10 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 906 ms
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 21:22:11 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-02 21:22:12 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 21:22:12 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 21:22:12 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 21:22:12 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-02 21:22:13 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-02 21:22:13 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 3.747 seconds (JVM running for 5.176)
+>>>>>>> origin/master

@@ -21,7 +21,9 @@ import sun.security.krb5.internal.crypto.EType;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
@@ -38,7 +40,7 @@ public class DataTab<E> extends Tab {
     //TableView
     private final TableView<E> tableView;
     //菜单栏
-    private DataContextMenu contextMenu;
+    private DataContextMenu<E> contextMenu;
 
     @Getter
     private Field[] fields;
@@ -56,7 +58,7 @@ public class DataTab<E> extends Tab {
         super.setContent(tableView);
         initTableColumns();
         //初始化ContextMenu
-        contextMenu = new DataContextMenu(this);
+        contextMenu = new DataContextMenu<>(this);
         initContextMenu();
     }
     
@@ -131,14 +133,14 @@ public class DataTab<E> extends Tab {
         });
     }
 
-    private static class DataContextMenu extends ContextMenu {
+    private static class DataContextMenu<T> extends ContextMenu {
         private MenuItem add = new MenuItem("添加");
         private MenuItem lookup = new MenuItem("查看");
         private MenuItem modify = new MenuItem("修改");
         private MenuItem delete = new MenuItem("删除");
-        private DataTab<?> dataTab;
+        private DataTab<T> dataTab;
 
-        public DataContextMenu(DataTab<?> dataTab){
+        public DataContextMenu(DataTab<T> dataTab){
             this.dataTab = dataTab;
             delete.setOnAction(event -> deleteElement());
             add.setOnAction(event -> {
@@ -217,12 +219,18 @@ public class DataTab<E> extends Tab {
                             method.invoke(o,data);
                         }
                         else {
-                            Date data = new Date(((DatePicker)getNodeByRowColumnIndex(i,1,gridPane)).getValue().toEpochDay());
+                            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            //((DatePicker)getNodeByRowColumnIndex(i,1,gridPane)).getValue()
+                            Date data = new Date();
                             System.out.println(data);
+
                             method.invoke(o,data);
                         }
-                        //两个数据更新，view和database
                     }
+                    //两个数据更新，view和database
+                    dataTab.getEObservableList().add((T)o);
+
+
                  } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                      e.printStackTrace();
                  }
@@ -267,8 +275,13 @@ public class DataTab<E> extends Tab {
                 if("Date".equals(field.getType().getSimpleName())){
                     DatePicker datePicker = new DatePicker();
                     datePicker.setDisable(true);
-                    Timestamp date = (Timestamp) method.invoke(o);
-                    datePicker.setValue(LocalDate.of(date.getYear(), date.getMonth(), date.getDay()));
+                    Date date = (Date)method.invoke(o);
+
+                    String[] strNow1 = new SimpleDateFormat("yyyy-MM-dd").format(date).split("-");
+
+                    datePicker.setValue(LocalDate.of(Integer.parseInt(strNow1[0]),
+                            Integer.parseInt(strNow1[1]),
+                            Integer.parseInt(strNow1[2])));
                     gridPane.add(datePicker,1,i);
                 }else {
                     TextField textField = new TextField();
@@ -312,8 +325,12 @@ public class DataTab<E> extends Tab {
 
                 if("Date".equals(field.getType().getSimpleName())){
                     DatePicker datePicker = new DatePicker();
-                    Timestamp date = (Timestamp) method.invoke(o);
-                    datePicker.setValue(LocalDate.of(date.getYear(), date.getMonth(), date.getDay()));
+                    Date date = (Date) method.invoke(o);
+                    String[] strNow1 = new SimpleDateFormat("yyyy-MM-dd").format(date).split("-");
+
+                    datePicker.setValue(LocalDate.of(Integer.parseInt(strNow1[0]),
+                            Integer.parseInt(strNow1[1]),
+                            Integer.parseInt(strNow1[2])));
                     gridPane.add(datePicker,1,i);
                 }else {
                     TextField textField = new TextField();
