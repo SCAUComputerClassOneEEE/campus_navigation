@@ -224,6 +224,9 @@ public class DataTab<E> extends Tab {
         //删除选中项
         public void deleteElement(){
             dataTab.eObservableList.remove(dataTab.tableView.getSelectionModel().getSelectedItem());
+            /*
+            数据库操作
+             */
         }
 
         //修改选中项
@@ -290,11 +293,11 @@ public class DataTab<E> extends Tab {
                     if (field.getType().getSimpleName().equals("Date")){
                         dataArea = new DatePicker();
                         dataArea.setDisable(false);
-                        if (type==3)dataArea.setDisable(true);
+                        if (type==3 | type == 2) dataArea.setDisable(true);
                     }else {
                         dataArea = new TextField();
                         ((TextField)dataArea).setEditable(true);
-                        if(type==3)((TextField)dataArea).setEditable(false);
+                        if(type==3|(type == 2 && field.getName().equals("id")))((TextField)dataArea).setEditable(false);
                     }
                     gridPane.add(dataArea,1,index);
                     index++;
@@ -382,34 +385,39 @@ public class DataTab<E> extends Tab {
                     method.invoke(object,data);
                 }
                 else {
-                    if (field.getType().getSimpleName().equals("int")){
-                        int data = Integer.parseInt(((TextField)getNodeByRowColumnIndex(index++,1,gridPane)).getText());
-                        //
-                        System.out.println(data);
-                        method.invoke(object,data);
-                    }
-                    else if(field.getType().getSimpleName().equals("String")){
-                        String data = ((TextField)getNodeByRowColumnIndex(index++,1,gridPane)).getText();
-                        //
-                        System.out.println(data);
-                        method.invoke(object,data);
-                    }
-                    else if(field.getType().getSimpleName().equals("BigDecimal")){
-                        BigDecimal data = new BigDecimal(((TextField)getNodeByRowColumnIndex(index++,1,gridPane)).getText());
-                        //
-                        System.out.println(data);
-                        method.invoke(object,data);
-                    }
-                    else if(field.getType().getSimpleName().equals("Date")){
-                        Date data = new Date();//((DatePicker)getNodeByRowColumnIndex(i,1,gridPane)).getValue()
-                        //
-                        System.out.println(data);
-                        method.invoke(object,data);
+                    switch (field.getType().getSimpleName()) {
+                        case "int": {
+                            int data = Integer.parseInt(((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText());
+                            //
+                            System.out.println(data);
+                            method.invoke(object, data);
+                            break;
+                        }
+                        case "String": {
+                            String data = ((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText();
+                            //
+                            System.out.println(data);
+                            method.invoke(object, data);
+                            break;
+                        }
+                        case "BigDecimal": {
+                            BigDecimal data = new BigDecimal(((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText());
+                            //
+                            System.out.println(data);
+                            method.invoke(object, data);
+                            break;
+                        }
                     }
                 }
             }
 
-            if (type==1)dataTab.getEObservableList().add((T)object);
+            if (type==1) dataTab.getEObservableList().add((T)object);
+            //1 -- add; other modify
+
+            /*
+            数据库操作
+            先数据库操作，再视图更新
+             */
         }
 
         /**
