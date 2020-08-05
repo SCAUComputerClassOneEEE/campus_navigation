@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -161,7 +162,7 @@ public class DataTab<E> extends Tab {
 
             super.getItems().addAll(add,delete,modify,lookup);
             Scene scene = new Scene(gridPane);
-            gridPane.setPrefSize(400,600);
+            gridPane.setPrefSize(450,550);
             stage.setScene(scene);
         }
 
@@ -217,8 +218,8 @@ public class DataTab<E> extends Tab {
             cancel.setOnAction(event -> {
                 stage.close();
             });
-            gridPane.add(add,2,8);
-            gridPane.add(cancel,3,8);
+            gridPane.add(add,2,dataTab.getFields().length);
+            gridPane.add(cancel,3,dataTab.getFields().length);
         }
 
         //删除选中项
@@ -253,8 +254,8 @@ public class DataTab<E> extends Tab {
                 stage.close();
             });
 
-            gridPane.add(yes,2,8);
-            gridPane.add(cancel,3,8);
+            gridPane.add(yes,2,dataTab.getFields().length);
+            gridPane.add(cancel,3,dataTab.getFields().length);
         }
 
         //查看数据项
@@ -270,7 +271,7 @@ public class DataTab<E> extends Tab {
             button.setOnAction(event -> {
                 stage.close();
             });
-            gridPane.add(button,2,8);
+            gridPane.add(button,2,dataTab.getFields().length);
         }
 
         //以下为辅助函数
@@ -287,16 +288,20 @@ public class DataTab<E> extends Tab {
                 Field field = dataTab.getFields()[i];
                 if(!(type==1&&(field.getName().equals("id")||field.getType().getSimpleName().equals("Date")))){
                     //添加数据描述
-                    gridPane.add(new Label(field.getName()+":"),0,index);
+                    Label label = new Label(field.getName()+":");
+                    //label.setPadding(new Insets(5,5,5,5));
+                    gridPane.add(label,0,index);
                     //添加数据显示框
                     Node dataArea;
                     if (field.getType().getSimpleName().equals("Date")){
                         dataArea = new DatePicker();
                         dataArea.setDisable(false);
+                        ((DatePicker)dataArea).setPadding(new Insets(5,5,5,5));
                         if (type==3 | type == 2) dataArea.setDisable(true);
                     }else {
                         dataArea = new TextField();
                         ((TextField)dataArea).setEditable(true);
+                        //((TextField)dataArea).setPadding(new Insets(5,5,5,5));
                         if(type==3|(type == 2 && field.getName().equals("id")))((TextField)dataArea).setEditable(false);
                     }
                     gridPane.add(dataArea,1,index);
@@ -357,7 +362,7 @@ public class DataTab<E> extends Tab {
                 object = dataTab.tableView.getSelectionModel().getSelectedItem();
             }
 
-            //int index = 0;
+            int index = 0;
             for (int i = 0; i < dataTab.getFields().length; i++){
                 //数据域
                 Field field = dataClass.getDeclaredFields()[i];
@@ -368,8 +373,7 @@ public class DataTab<E> extends Tab {
                 //方法名
                 Method method = dataClass.getMethod(methodName,field.getType());
 
-                int index = 0;
-                System.out.print(field.getType().getSimpleName()+":");
+                System.out.print("Type:"+field.getType().getSimpleName()+" value:");
                 //解决添加的项为id或日期的项
                 if(type==1&&field.getName().equals("id")){
                     //获取当前库的最新id
@@ -380,29 +384,25 @@ public class DataTab<E> extends Tab {
                 }
                 else if (type==1&&field.getType().getSimpleName().equals("Date")){
                     Date data = new Date();
-                    //
                     System.out.println(data);
                     method.invoke(object,data);
                 }
                 else {
                     switch (field.getType().getSimpleName()) {
                         case "int": {
-                            int data = Integer.parseInt(((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText());
-                            //
+                            int data = Integer.parseInt(((TextField) getNodeByRowColumnIndex(index, 1, gridPane)).getText());
                             System.out.println(data);
                             method.invoke(object, data);
                             break;
                         }
                         case "String": {
                             String data = ((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText();
-                            //
                             System.out.println(data);
                             method.invoke(object, data);
                             break;
                         }
                         case "BigDecimal": {
                             BigDecimal data = new BigDecimal(((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText());
-                            //
                             System.out.println(data);
                             method.invoke(object, data);
                             break;
