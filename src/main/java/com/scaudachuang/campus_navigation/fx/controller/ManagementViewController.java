@@ -88,7 +88,7 @@ public class ManagementViewController implements Initializable {
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String textContent = sf.format(date)+"\n"+notice+"\n";
         System.out.println(textContent);
-        File file = new File(System.getProperty("user.dir") +"\\src\\main\\resources\\NoticeFile\\notice");
+        File file = new File(System.getProperty("user.dir") +"\\src\\main\\resources\\static\\notice");
         FileWriter fileWriter = new FileWriter(file,true);
         fileWriter.write(textContent);
         fileWriter.flush();
