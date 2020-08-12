@@ -11,9 +11,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URL;
+import java.util.Objects;
 
 
 @SpringBootTest
@@ -49,5 +52,17 @@ class CampusNavigationApplicationTests {
         method.invoke(o,"11");
         Admin admin = (Admin)o;
         System.out.println(admin.getPassword());
+    }
+
+    @Test
+    void getResourcesTest(){
+//        System.out.println(getClass().getResource(""));
+//
+        System.out.println(getClass().getResource("/file/message.txt"));
+        URL url = getClass().getResource("/file/message.txt");
+        String filePath = url.toString().substring(6);
+        System.out.println(filePath);
+        File file = new File("D:/sources/java/campus_navigation/target/test-classes/file/message.txt");
+        System.out.println(file.exists());
     }
 }

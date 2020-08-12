@@ -1,0 +1,531 @@
+2020-08-12 20:17:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 2556 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:17:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-12 20:17:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-12 20:17:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:17:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 53ms. Found 4 JPA repository interfaces.
+2020-08-12 20:17:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1174 ms
+2020-08-12 20:17:12 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:17:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:17:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:17:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:17:13 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:17:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:17:14 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:17:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:17:14 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:17:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:17:14 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2020-08-12 20:17:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-12 20:19:13 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 6588 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:19:13 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-12 20:19:13 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 54ms. Found 4 JPA repository interfaces.
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 918 ms
+2020-08-12 20:19:14 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:19:15 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:19:15 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:19:15 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:19:15 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:19:16 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:19:16 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:19:16 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:19:16 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:19:17 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:19:17 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-12 20:19:17 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-12 20:19:17 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 4.114 seconds (JVM running for 5.511)
+2020-08-12 20:19:25 INFO  JavaFX Application Thread com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:19:45 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:19:45 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:22:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 1780 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:22:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:22:40 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:22:40 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 73ms. Found 4 JPA repository interfaces.
+2020-08-12 20:22:41 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:22:41 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:22:42 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:22:42 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:22:42 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:22:43 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:22:43 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:22:43 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:22:43 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:22:43 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:22:45 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:22:45 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.237 seconds (JVM running for 7.703)
+2020-08-12 20:22:45 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:22:45 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:23:08 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 12700 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:23:08 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:23:09 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:23:09 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 69ms. Found 4 JPA repository interfaces.
+2020-08-12 20:23:09 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:23:10 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:23:11 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:23:11 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:23:11 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:23:11 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:23:12 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:23:12 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:23:12 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:23:12 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:23:14 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:23:14 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.332 seconds (JVM running for 7.467)
+2020-08-12 20:23:14 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:23:14 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:25:20 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 11072 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:25:20 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:25:20 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:25:20 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 77ms. Found 4 JPA repository interfaces.
+2020-08-12 20:25:21 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:25:21 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:25:22 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:25:22 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:25:23 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:25:23 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:25:23 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:25:24 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:25:24 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:25:24 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:25:25 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:25:25 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.277 seconds (JVM running for 7.378)
+2020-08-12 20:25:25 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:25:25 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:26:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 3900 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:26:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:26:33 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:26:33 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 68ms. Found 4 JPA repository interfaces.
+2020-08-12 20:26:34 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:26:34 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:26:36 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:26:36 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:26:36 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:26:36 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:26:36 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:26:37 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:26:37 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:26:37 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:26:38 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:26:38 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.305 seconds (JVM running for 7.368)
+2020-08-12 20:26:39 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:26:39 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:27:06 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 7388 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:27:06 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:27:07 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:27:07 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 66ms. Found 4 JPA repository interfaces.
+2020-08-12 20:27:08 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:27:08 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:27:09 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:27:09 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:27:10 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:27:10 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:27:10 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:27:11 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:27:11 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:27:11 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:27:12 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:27:12 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.432 seconds (JVM running for 7.51)
+2020-08-12 20:27:12 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:27:12 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:27:40 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 10896 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:27:40 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:27:41 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:27:41 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 62ms. Found 4 JPA repository interfaces.
+2020-08-12 20:27:41 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:27:42 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:27:43 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:27:43 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:27:43 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:27:43 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:27:43 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:27:44 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:27:44 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:27:44 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:27:45 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:27:46 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.304 seconds (JVM running for 7.446)
+2020-08-12 20:27:46 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:27:46 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:29:27 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 808 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:29:27 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:29:28 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:29:28 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 82ms. Found 4 JPA repository interfaces.
+2020-08-12 20:29:29 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:29:29 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:29:30 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:29:30 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:29:31 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:29:31 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:29:31 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:29:32 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:29:32 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:29:32 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:29:33 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:29:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.49 seconds (JVM running for 7.59)
+2020-08-12 20:29:34 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:29:34 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:30:28 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 6924 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:30:28 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:30:29 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:30:29 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 71ms. Found 4 JPA repository interfaces.
+2020-08-12 20:30:29 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:30:29 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:30:31 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:30:31 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:30:31 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:30:31 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:30:31 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:30:32 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:30:32 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:30:32 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:30:33 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:30:34 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.19 seconds (JVM running for 7.286)
+2020-08-12 20:30:34 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:30:34 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:30:56 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 11736 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:30:56 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:30:57 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:30:57 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 62ms. Found 4 JPA repository interfaces.
+2020-08-12 20:30:58 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:30:58 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:30:59 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:30:59 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:31:00 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:31:00 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:00 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:31:01 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:31:01 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:31:01 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:02 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:31:02 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.38 seconds (JVM running for 7.468)
+2020-08-12 20:31:02 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:31:02 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:31:26 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 1500 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:31:26 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:31:27 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:31:27 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 91ms. Found 4 JPA repository interfaces.
+2020-08-12 20:31:27 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:31:27 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:29 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:31:29 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:31:29 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:31:29 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:29 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:31:30 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:31:30 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:31:30 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:31 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:31:32 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.379 seconds (JVM running for 7.455)
+2020-08-12 20:31:32 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:31:32 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:31:55 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 9520 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:31:55 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:31:56 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:31:56 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 79ms. Found 4 JPA repository interfaces.
+2020-08-12 20:31:56 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:31:57 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:58 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:31:58 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:31:59 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:31:59 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:31:59 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:32:00 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:32:00 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:32:00 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:32:01 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:32:01 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.96 seconds (JVM running for 8.032)
+2020-08-12 20:32:01 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:32:01 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:32:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 8316 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:32:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:32:34 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:32:34 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 65ms. Found 4 JPA repository interfaces.
+2020-08-12 20:32:34 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:32:35 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:32:36 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:32:36 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:32:36 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:32:36 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:32:36 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:32:37 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:32:37 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:32:37 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:32:39 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:32:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.47 seconds (JVM running for 7.607)
+2020-08-12 20:32:39 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:32:39 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:36:23 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 4396 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:36:23 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:36:24 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:36:24 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 60ms. Found 4 JPA repository interfaces.
+2020-08-12 20:36:24 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:36:24 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:36:26 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:36:26 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:36:26 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:36:26 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:36:26 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:36:27 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:36:27 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:36:27 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:36:28 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:36:29 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.306 seconds (JVM running for 7.355)
+2020-08-12 20:36:29 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:36:29 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:37:07 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 2168 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:37:07 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:37:08 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:37:08 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 70ms. Found 4 JPA repository interfaces.
+2020-08-12 20:37:08 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:37:08 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:37:10 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:37:10 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:37:10 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:37:10 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:37:10 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:37:11 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:37:11 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:37:11 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:37:12 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:37:13 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.239 seconds (JVM running for 7.344)
+2020-08-12 20:37:13 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:37:13 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:37:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 10488 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:37:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:37:34 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:37:34 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 67ms. Found 4 JPA repository interfaces.
+2020-08-12 20:37:34 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:37:34 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:37:36 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:37:36 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:37:36 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:37:36 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:37:36 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:37:37 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:37:37 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:37:37 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:37:38 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:37:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.356 seconds (JVM running for 7.459)
+2020-08-12 20:37:39 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:37:39 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:38:14 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 13628 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:38:14 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:38:15 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:38:15 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 73ms. Found 4 JPA repository interfaces.
+2020-08-12 20:38:15 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:38:15 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:38:17 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:38:17 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:38:17 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:38:17 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:38:17 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:38:18 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:38:18 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:38:18 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:38:20 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:38:20 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.557 seconds (JVM running for 7.735)
+2020-08-12 20:38:20 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:38:20 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:39:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 14000 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:39:33 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:39:34 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:39:34 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 69ms. Found 4 JPA repository interfaces.
+2020-08-12 20:39:35 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:39:35 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:39:36 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:39:36 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:39:36 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:39:37 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:39:37 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:39:37 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:39:37 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:39:37 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:39:39 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:39:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.284 seconds (JVM running for 7.423)
+2020-08-12 20:39:39 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:39:39 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:41:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 9780 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:41:39 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:41:40 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:41:40 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 74ms. Found 4 JPA repository interfaces.
+2020-08-12 20:41:40 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:41:40 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:41:42 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:41:42 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:41:42 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:41:42 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:41:42 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:41:43 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:41:43 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:41:43 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:41:44 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:41:45 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.474 seconds (JVM running for 7.545)
+2020-08-12 20:41:45 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:41:45 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:43:25 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 12496 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:43:25 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:43:26 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:43:26 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 73ms. Found 4 JPA repository interfaces.
+2020-08-12 20:43:26 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:43:27 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:43:28 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:43:28 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:43:28 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:43:28 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:43:29 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:43:29 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:43:29 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:43:29 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:43:30 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:43:31 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.297 seconds (JVM running for 7.413)
+2020-08-12 20:43:31 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:43:31 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:43:58 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 8920 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:43:58 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:43:58 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:43:59 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 66ms. Found 4 JPA repository interfaces.
+2020-08-12 20:43:59 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:43:59 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:44:01 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:44:01 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:44:01 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:44:01 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:44:01 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:44:02 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:44:02 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:44:02 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:44:03 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:44:04 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.819 seconds (JVM running for 7.893)
+2020-08-12 20:44:04 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:44:04 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:44:36 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 8340 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:44:36 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:44:36 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:44:37 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 81ms. Found 4 JPA repository interfaces.
+2020-08-12 20:44:37 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:44:37 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:44:39 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:44:39 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:44:39 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:44:39 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:44:39 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:44:40 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:44:40 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:44:40 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:44:41 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:44:42 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.538 seconds (JVM running for 7.633)
+2020-08-12 20:44:42 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:44:42 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:45:15 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 1324 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:45:15 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:45:16 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:45:16 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 68ms. Found 4 JPA repository interfaces.
+2020-08-12 20:45:17 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:45:17 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:45:18 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:45:18 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:45:18 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:45:18 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:45:19 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:45:19 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:45:19 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:45:19 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:45:21 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:45:21 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.174 seconds (JVM running for 7.477)
+2020-08-12 20:45:21 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:45:21 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:51:43 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 6804 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:51:43 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:51:44 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:51:44 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 62ms. Found 4 JPA repository interfaces.
+2020-08-12 20:51:44 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:51:45 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:51:46 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:51:46 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:51:46 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:51:46 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:51:47 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:51:47 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:51:47 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:51:47 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:51:49 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:51:49 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.395 seconds (JVM running for 7.505)
+2020-08-12 20:51:49 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:51:49 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:55:04 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 14208 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:55:04 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:55:05 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:55:05 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 80ms. Found 4 JPA repository interfaces.
+2020-08-12 20:55:05 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:55:05 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:55:07 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:55:07 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:55:07 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:55:08 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:55:08 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:55:09 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:55:09 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:55:09 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:55:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Starting application on DESKTOP-3DT9P44 with PID 7136 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:55:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2020-08-12 20:55:10 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-12 20:55:11 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 70ms. Found 4 JPA repository interfaces.
+2020-08-12 20:55:11 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 7.806 seconds (JVM running for 9.124)
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:55:11 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:55:11 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (https)
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-08-12 20:55:11 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1291 ms
+2020-08-12 20:55:12 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:55:13 INFO  ForkJoinPool.commonPool-worker-1 com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:55:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:55:14 INFO  ForkJoinPool.commonPool-worker-1 org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-12 20:55:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-12 20:55:14 INFO  ForkJoinPool.commonPool-worker-1 org.springframework.boot.SpringApplication Started application in 5.186 seconds (JVM running for 7.13)
+2020-08-12 20:55:29 INFO  JavaFX Application Thread org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:55:29 INFO  JavaFX Application Thread org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:56:10 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Starting CampusNavigationApplicationTests on DESKTOP-3DT9P44 with PID 4844 (started by best lu in D:\sources\java\campus_navigation)
+2020-08-12 20:56:10 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests No active profile set, falling back to default profiles: default
+2020-08-12 20:56:11 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-08-12 20:56:11 INFO  main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 63ms. Found 4 JPA repository interfaces.
+2020-08-12 20:56:11 INFO  main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-12 20:56:11 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:56:13 INFO  main org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-12 20:56:13 INFO  main org.hibernate.Version HHH000412: Hibernate Core {5.4.9.Final}
+2020-08-12 20:56:13 INFO  main org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-12 20:56:13 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:56:13 INFO  main org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-12 20:56:14 INFO  main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-12 20:56:14 INFO  main org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-12 20:56:14 INFO  main com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-08-12 20:56:15 INFO  main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:56:16 INFO  main com.scaudachuang.campus_navigation.CampusNavigationApplicationTests Started CampusNavigationApplicationTests in 6.411 seconds (JVM running for 7.338)
+2020-08-12 20:56:16 INFO  SpringContextShutdownHook org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-12 20:56:16 INFO  SpringContextShutdownHook org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'

@@ -41,6 +41,8 @@ public class SignInController implements Initializable{
     @FXML
     private CheckBox rememberPassword;
 
+    File loginF = new File(getClass().getResource("/loginMassage/massage").toString().substring(6));
+
 
     private ArrayList<String> loginMassage;
     @Override
@@ -106,8 +108,7 @@ public class SignInController implements Initializable{
     private ArrayList<String> getLoginMassage(){
         ArrayList<String> arrayList = new ArrayList<>();
         try {
-            File f = new File(System.getProperty("user.dir") +"\\src\\main\\resources\\loginMassage\\massage");
-            FileReader fr = new FileReader(f);
+            FileReader fr = new FileReader(loginF);
             BufferedReader bf = new BufferedReader(fr);
             String str;
             // 按行读取字符串
@@ -132,8 +133,7 @@ public class SignInController implements Initializable{
         loginMassage.set(1,loginMassage.get(1).substring(0,9)+password);
         loginMassage.set(2,loginMassage.get(2).substring(0,17)+rememberPassword.selectedProperty().getValue().toString());
         try {
-            File f = new File(System.getProperty("user.dir") +"\\src\\main\\resources\\loginMassage\\massage");
-            FileWriter fw = new FileWriter(f);
+            FileWriter fw = new FileWriter(loginF);
             BufferedWriter bf = new BufferedWriter(fw);
             // 按行读取字符串
             for(String str:loginMassage){
