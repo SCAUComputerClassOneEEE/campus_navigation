@@ -10,6 +10,7 @@ import java.util.Date;
 
 public interface AdminDAO extends JpaRepository<Admin,Integer> {
     Admin findAdminByAdminName(String adminName);
+    Admin findAdminById(int id);
 
     @Transactional
     @Query(value = "update Admin set adminName = ?1 where id = ?2")

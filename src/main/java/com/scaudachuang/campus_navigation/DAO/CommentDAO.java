@@ -15,7 +15,7 @@ import java.util.List;
 public interface CommentDAO extends JpaRepository<Comment,Integer>, JpaSpecificationExecutor<Comment> {
     List<Comment> findAllByUid(int uid);
     void deleteByUid(int uId);
-
+    Comment findCommentById(int id);
 //    @Transactional
 //    @Query(value = "update user set userName = ?1 where openId = ?2")
 //    @Modifying

@@ -1,27 +1,26 @@
 package com.scaudachuang.campus_navigation.fx.controller;
 
+import com.scaudachuang.campus_navigation.entity.Admin;
+import com.scaudachuang.campus_navigation.entity.Building;
+import com.scaudachuang.campus_navigation.entity.Comment;
+import com.scaudachuang.campus_navigation.entity.User;
 import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import com.scaudachuang.campus_navigation.service.AdminService;
 import com.scaudachuang.campus_navigation.service.BuildingService;
 import com.scaudachuang.campus_navigation.service.CommentService;
 import com.scaudachuang.campus_navigation.service.UserService;
 import de.felixroske.jfxsupport.FXMLController;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
-import javax.swing.border.EmptyBorder;
 import java.io.*;
 import java.net.URL;
-import java.text.FieldPosition;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -58,6 +57,7 @@ public class ManagementViewController implements Initializable {
     private String notice;
     private Button edit;
     private Button sent;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
@@ -105,8 +105,6 @@ public class ManagementViewController implements Initializable {
         }
     }
 
-
-
     private void displayTab(DataEnum.DataForm dataForm) throws ClassNotFoundException {
         paneClosing();
        tabPane.setVisible(true);
@@ -125,8 +123,6 @@ public class ManagementViewController implements Initializable {
             dataTab.setOnClosed(event -> tabMap.remove(dataForm));
         }
     }
-
-
 
     private void displayNotice(){
         paneClosing();
@@ -164,6 +160,61 @@ public class ManagementViewController implements Initializable {
         if(textArea.getText().isEmpty()) {
             textArea.appendText("这里发布我们的公告");
         }
+    }
 
+    public void deletedTable(Object deleted, Class<?> EType){
+        switch (EType.getSimpleName()){
+            case "Admin":{
+                adminService.deleteAdminById(((Admin) deleted).getId());
+                break;
+            }
+            case "Comment":{
+                System.out.println(commentService);
+                commentService.deleteCommentById(((Comment)deleted).getId());
+                break;
+            }
+            case "User":{
+                userService.deleteUserById(((User)deleted).getId());
+                break;
+            }
+            case "Building":{
+                buildingService.deleteBuildingById(((Building)deleted).getId());
+                break;
+            }
+        }
+    }
+
+    /**
+     *
+     * @param op 操作对象
+     * @param EType 操作类型
+     */
+    public Object updateOrAddTable(Object op, Class<?> EType){
+        switch (EType.getSimpleName()){
+            case "Admin":{
+                Admin admin = (Admin) op;
+                if (adminService.findAdminById(admin.getId()) != null) adminService.deleteAdminById(admin.getId());
+                adminService.addAdmin(admin);
+                return admin;
+            }
+            case "Comment":{
+                System.out.println("failed");
+                break;
+            }
+            case "User":{
+                User user = (User) op;
+                if (userService.findUserById(user.getId()) == null) break;
+                userService.deleteUserById(user.getId());
+                userService.addUser(user);
+                return user;
+            }
+            case "Building":{
+                Building building = (Building) op;
+                if (buildingService.getBuildingById(building.getId()) != null) buildingService.deleteBuildingById(building.getId());
+                buildingService.addBuilding(building);
+                return building;
+            }
+        }
+        return null;
     }
 }

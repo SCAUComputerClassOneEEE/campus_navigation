@@ -25,7 +25,7 @@ public abstract class AbstractFxApplication extends Application {
 	protected static FxmlView initView;
 
 	// spring context
-	protected static ConfigurableApplicationContext applicationContext;
+	public static ConfigurableApplicationContext applicationContext;
 
 	// pre-load status
 	private float progress = 0;

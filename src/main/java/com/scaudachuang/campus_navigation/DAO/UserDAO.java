@@ -10,8 +10,7 @@ import java.util.Date;
 
 public interface UserDAO extends JpaRepository<User,Integer> {
 
-    User findByOpenId(String openId);
-
+    User findUserById(int id);
     @Transactional
     @Query(value = "update user set userName = ?1 where openId = ?2")
     @Modifying

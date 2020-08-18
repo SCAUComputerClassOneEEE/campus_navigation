@@ -1,13 +1,6 @@
 package com.scaudachuang.campus_navigation.fx.controller;
 
-import com.scaudachuang.campus_navigation.controller.AffairController;
-import com.scaudachuang.campus_navigation.entity.Admin;
-import com.scaudachuang.campus_navigation.entity.Comment;
-import com.scaudachuang.campus_navigation.entity.User;
-import com.scaudachuang.campus_navigation.service.AdminService;
-import com.scaudachuang.campus_navigation.service.BuildingService;
-import com.scaudachuang.campus_navigation.service.CommentService;
-import com.scaudachuang.campus_navigation.service.UserService;
+import com.scaudachuang.campus_navigation.fx.AbstractFxApplication;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -17,102 +10,50 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.ConfigurableApplicationContext;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Stack;
 
 @Getter
 @Setter
 public class DataContextMenu<T> extends ContextMenu {
-
-    @Resource
-    private CommentService commentService;
-    @Resource
-    private BuildingService buildingService;
-    @Resource
-    private UserService userService;
-    @Resource
-    private AdminService adminService;
-
-    //容量为3的删除桶,可以撤销操作，撤销最近的操作
-    private final Stack<Object> deleteBucket = new Stack<Object>(){
-        private final int BUCKET_MAX_SIZE = 3;
-
-        @Override
-        public Object push(Object item) {
-            if (this.size() >= BUCKET_MAX_SIZE){
-                deletedListOFTable(this.toArray(),dataTab.getEType());
-                this.clear();
-            }else{
-                super.push(item);
-            }
-            return item;
-        }
-    };
 
     //菜单按钮
     private final MenuItem add = new MenuItem("添加");
     private final MenuItem delete = new MenuItem("删除");
     private final MenuItem modify = new MenuItem("修改");
     private final MenuItem lookup = new MenuItem("查看");
-
+    private static ManagementViewController managementViewController;
     //重要参数
-    private final DataTab<T> dataTab;
+    private DataTab<T> dataTab;
 
     //窗体
     private final GridPane gridPane = new GridPane();
-    private final Stage stage = new Stage();
+    private Stage stage;
 
-    public DataContextMenu(DataTab<T> dataTab){
-        //参数传递
+    public void init(DataTab<T> dataTab){
         this.dataTab = dataTab;
-
         //给菜单添加功能
         addFunction();
-
         super.getItems().addAll(add,delete,modify,lookup);
         Scene scene = new Scene(gridPane);
         gridPane.setPrefSize(450,550);
+        stage = new Stage();
         stage.setScene(scene);
-    }
-
-    public void deletedListOFTable(Object[] listDeleted, Class<?> EType){
-        switch (EType.getName()){
-            case "Admin":{
-                adminService.deleteAdmins(Arrays.asList((Admin[])listDeleted));
-                break;
-            }
-            case "Comment":{
-                commentService.deleteComments(Arrays.asList((Comment[])listDeleted));
-                break;
-            }
-            case "User":{
-                userService.deleteUsers(Arrays.asList((User[])listDeleted));
-                break;
-            }
-            case "Building":{
-                System.out.println("无法通过此删除");
-            }
-        }
-    }
-    public static void updatedListedOfTable(){
-
+        ConfigurableApplicationContext applicationContext = AbstractFxApplication.applicationContext;
+        managementViewController = applicationContext.getBean(ManagementViewController.class);
     }
 
     //给菜单各个按钮添加功能
     private void addFunction(){
         //增
-        add.setOnAction(event -> {
-            addElement();
-        });
+        add.setOnAction(event -> addElement());
 
         //删
         delete.setOnAction(event -> deleteElement());
@@ -156,9 +97,7 @@ public class DataContextMenu<T> extends ContextMenu {
             stage.close();
         });
 
-        cancel.setOnAction(event -> {
-            stage.close();
-        });
+        cancel.setOnAction(event -> stage.close());
         gridPane.add(add,2,dataTab.getFields().length);
         gridPane.add(cancel,3,dataTab.getFields().length);
     }
@@ -167,7 +106,7 @@ public class DataContextMenu<T> extends ContextMenu {
     public void deleteElement(){
         T ob = dataTab.getTableView().getSelectionModel().getSelectedItem();
         dataTab.getEObservableList().remove(ob);
-        deleteBucket.add(ob);
+        managementViewController.deletedTable(ob,dataTab.getEType());
     }
 
     //修改选中项
@@ -190,9 +129,7 @@ public class DataContextMenu<T> extends ContextMenu {
             }
         });
 
-        cancel.setOnAction(event -> {
-            stage.close();
-        });
+        cancel.setOnAction(event -> stage.close());
 
         gridPane.add(yes,2,dataTab.getFields().length);
         gridPane.add(cancel,3,dataTab.getFields().length);
@@ -208,9 +145,7 @@ public class DataContextMenu<T> extends ContextMenu {
         loadData();
 
         Button button = new Button("确定");
-        button.setOnAction(event -> {
-            stage.close();
-        });
+        button.setOnAction(event -> stage.close());
         gridPane.add(button,2,dataTab.getFields().length);
     }
 
@@ -218,7 +153,7 @@ public class DataContextMenu<T> extends ContextMenu {
     /**
      * 加载视图
      * @param type 类型 1是添加，2是修改，3是查看
-     * @param gridPane
+     * @param gridPane n
      */
     private void loadArea(int type,GridPane gridPane){
         gridPane.getChildren().clear();
@@ -250,12 +185,6 @@ public class DataContextMenu<T> extends ContextMenu {
         }
     }
 
-    /**
-     * 加载数据
-     * @throws NoSuchMethodException
-     * @throws InvocationTargetException
-     * @throws IllegalAccessException
-     */
     private void loadData() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Class<?> dataClass = dataTab.getEType();
         Object selectedObject = dataTab.getTableView().getSelectionModel().getSelectedItem();
@@ -286,11 +215,6 @@ public class DataContextMenu<T> extends ContextMenu {
 
     /**
      * 添加或者修改功能时，按下确定键后的操作
-     * @param type
-     * @throws IllegalAccessException
-     * @throws InstantiationException
-     * @throws InvocationTargetException
-     * @throws NoSuchMethodException
      */
     private void addOrModify(int type) throws IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
         Class<?> dataClass = dataTab.getEType();
@@ -350,14 +274,9 @@ public class DataContextMenu<T> extends ContextMenu {
                 }
             }
         }
-
-        if (type==1) dataTab.getEObservableList().add((T)object);
-        //1 -- add; other modify
-
-            /*
-            数据库操作
-            先数据库操作，再视图更新
-             */
+        Object retOp = managementViewController.updateOrAddTable(object,dataTab.getEType());
+        if (type != 1) dataTab.getEObservableList().remove((T)retOp);
+        dataTab.getEObservableList().add((T)retOp);
     }
 
     /**
@@ -372,12 +291,11 @@ public class DataContextMenu<T> extends ContextMenu {
         ObservableList<Node> childrens = gridPane.getChildren();
 
         for (Node node : childrens) {
-            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+            if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
                 result = node;
                 break;
             }
         }
-
         return result;
     }
 }

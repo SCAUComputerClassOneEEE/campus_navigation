@@ -1,44 +1,23 @@
 package com.scaudachuang.campus_navigation.fx.controller;
 
-import com.scaudachuang.campus_navigation.controller.AffairController;
-import com.scaudachuang.campus_navigation.entity.Admin;
 import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
-import sun.security.krb5.internal.crypto.EType;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Stack;
-
 
 public class DataTab<E> extends Tab {
     //泛型类
     @Getter
-    private final Class<?> EType;
+    @Setter
+    private Class<?> EType;
     //TableView动态数据
 
     @Getter
@@ -52,23 +31,20 @@ public class DataTab<E> extends Tab {
     @Getter
     private Field[] fields;
 
-    public DataTab(DataEnum.DataForm dataForm, List<E> eList) throws ClassNotFoundException {
-
-        //泛型数据装载
-        EType = Class.forName(DataEnum.toUrl(dataForm));
-        //Tab标头
-        super.setText(String.valueOf(dataForm));
-
+    public DataTab(DataEnum.DataForm dataForm,List<E> eList) throws ClassNotFoundException {
         //初始化TableView
-        eObservableList = FXCollections.observableArrayList(eList);
+        this.eObservableList = FXCollections.observableArrayList(eList);
+        setEType(Class.forName(DataEnum.toUrl(dataForm)));
+        super.setText(String.valueOf(dataForm));
         tableView = new TableView<>(eObservableList);
         super.setContent(tableView);
         initTableColumns();
         //初始化ContextMenu
-        contextMenu = new DataContextMenu<>(this);
+        contextMenu = new DataContextMenu<>();
+        contextMenu.init(this);
         initContextMenu();
     }
-    
+
     private void initTableColumns(){
         //获得泛型类的数据域
         fields = EType.getDeclaredFields();
@@ -140,7 +116,4 @@ public class DataTab<E> extends Tab {
             this.contextMenu.hide();
         });
     }
-
-    //菜单内部类
-
 }
