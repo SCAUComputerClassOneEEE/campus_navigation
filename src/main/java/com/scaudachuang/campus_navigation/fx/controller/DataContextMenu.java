@@ -120,9 +120,11 @@ public class DataContextMenu<T> extends ContextMenu {
         yes.setOnAction(event -> {
             try {
                 addOrModify(2);
+
             } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();
             }
+            stage.close();
         });
 
         cancel.setOnAction(event -> stage.close());
