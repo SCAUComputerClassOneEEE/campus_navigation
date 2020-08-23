@@ -1,4 +1,4 @@
 -------------------------------------------------------
 2020/8/23 16：00 星期日下午会议
  -addOrModify 需要获取正确的id
- -控评表
+ -控评表 一定要在ManagementViewController里调用commentService.reportedComments()
