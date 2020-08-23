@@ -6,7 +6,11 @@ import com.scaudachuang.campus_navigation.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -29,12 +33,6 @@ public class CommentServiceImpl implements CommentService {
 //        }, pageable);
 //    }
 
-
-
-    public void addComment(Comment comment){
-        commentDAO.save(comment);
-    }
-
     @Override
     public List<Comment> findAll() {
         return commentDAO.findAll();
@@ -43,6 +41,15 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void deleteCommentById(int id) {
         commentDAO.deleteById(id);
+    }
+
+    @Override
+    public List<Comment> reportedComments() {
+        return commentDAO.findAll().
+                stream().
+                filter(a -> a.getReports() != 0).
+                sorted((o1, o2) -> o2.getReports() - o1.getReports()).
+                collect(Collectors.toList());
     }
 
 }

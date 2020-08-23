@@ -209,8 +209,6 @@ public class ManagementViewController implements Initializable {
             }
             case "User":{
                 User user = (User) op;
-                if (userService.findUserById(user.getId()) == null) break;
-                userService.deleteUserById(user.getId());
                 userService.addUser(user);
                 return user;
             }
@@ -223,4 +221,5 @@ public class ManagementViewController implements Initializable {
         }
         return null;
     }
+
 }

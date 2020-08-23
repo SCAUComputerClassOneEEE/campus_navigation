@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class Building implements Serializable,Data {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;//主键
 
     @Column(name = "name",columnDefinition = "varchar(10)  default 'Unknown' not null comment '建筑名称'")

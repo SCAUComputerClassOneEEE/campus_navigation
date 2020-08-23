@@ -10,7 +10,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.ConfigurableApplicationContext;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -46,8 +45,7 @@ public class DataContextMenu<T> extends ContextMenu {
         gridPane.setPrefSize(450,550);
         stage = new Stage();
         stage.setScene(scene);
-        ConfigurableApplicationContext applicationContext = AbstractFxApplication.applicationContext;
-        managementViewController = applicationContext.getBean(ManagementViewController.class);
+        managementViewController = AbstractFxApplication.applicationContext.getBean(ManagementViewController.class);
     }
 
     //给菜单各个按钮添加功能
@@ -242,7 +240,7 @@ public class DataContextMenu<T> extends ContextMenu {
             if(type==1&&field.getName().equals("id")){
                 //获取当前库的最新id
                 //分配id
-                int data = 1;//这个需要yx弄
+                int data = 0;//这个需要yx弄
                 System.out.println(data);
                 method.invoke(object,data);
             }
@@ -254,7 +252,7 @@ public class DataContextMenu<T> extends ContextMenu {
             else {
                 switch (field.getType().getSimpleName()) {
                     case "int": {
-                        int data = Integer.parseInt(((TextField) getNodeByRowColumnIndex(index, 1, gridPane)).getText());
+                        int data = Integer.parseInt(((TextField) getNodeByRowColumnIndex(index++, 1, gridPane)).getText());
                         System.out.println(data);
                         method.invoke(object, data);
                         break;

@@ -21,6 +21,8 @@ public class Comment implements Serializable,Data {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;//主键
 
+    @Column(name = "reports")
+    private int reports;
 
     /**
      * json context

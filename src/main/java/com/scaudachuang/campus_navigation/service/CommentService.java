@@ -7,4 +7,5 @@ import java.util.List;
 public interface CommentService {
     List<Comment> findAll();
     void deleteCommentById(int id);
+    List<Comment> reportedComments();
 }
