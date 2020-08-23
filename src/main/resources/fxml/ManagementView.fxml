@@ -50,6 +50,8 @@
            </Pane>
            <TabPane fx:id="tabPane" layoutX="15.0" layoutY="2.0" prefHeight="637.0" prefWidth="844.0"
                     tabClosingPolicy="UNAVAILABLE"/>
+           <TabPane fx:id="tabPane2" layoutX="15.0" layoutY="2.0" prefHeight="637.0" prefWidth="844.0"
+                    tabClosingPolicy="UNAVAILABLE"/>
        </AnchorPane>
    </center>
 </BorderPane>

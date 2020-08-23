@@ -80,12 +80,13 @@ public class DataTab<E> extends Tab {
             contextMenu.getAdd().setDisable(true);
         }
 
-        //评论表不可修改
+        //评论表不可修改与新增
         if(this.getEType().getSimpleName().equals("Comment")){
             contextMenu.getModify().setDisable(true);
+            contextMenu.getAdd().setDisable(true);
         }
 
-        //为TableView增加监听器
+        //处理是否选取数据对可用性的影响
         tableView.setOnContextMenuRequested(event -> {
             //此处用于判断是否有数据项被选中，并修改对应按钮的可用性
             if(tableView.getSelectionModel().getSelectedItem()==null){

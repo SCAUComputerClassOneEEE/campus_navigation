@@ -28,6 +28,7 @@ import java.util.*;
 @Component
 public class ManagementViewController implements Initializable {
 
+
     @Resource
     private BuildingService buildingService;
     @Resource
@@ -39,6 +40,8 @@ public class ManagementViewController implements Initializable {
 
     @FXML
     private TabPane tabPane;
+    @FXML
+    private TabPane tabPane2;
     @FXML
     private VBox vBox1;
     @FXML
@@ -55,6 +58,7 @@ public class ManagementViewController implements Initializable {
      * 或者用监听器监听Map的改变
      */
     private final Map<DataEnum.DataForm, DataTab<?>> tabMap = new HashMap<>();
+    private boolean reportedCommentLoad = false;
     private DataTab<?> dataTab;
     private TextArea textArea;
     private String notice;
@@ -64,6 +68,7 @@ public class ManagementViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
+        tabPane2.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
         vBox1.setPadding(new Insets(0));
         vBox2.setPadding(new Insets(0));
         vBox3.setPadding(new Insets(0));
@@ -81,7 +86,7 @@ public class ManagementViewController implements Initializable {
     @FXML
     private void Announcement() { displayNotice(); }
     @FXML
-    private void ReportedComments() {}
+    private void ReportedComments() throws ClassNotFoundException { disPlayReportedComment();}
 
     private void edit(){//点击编辑按钮，将textArea设置成可编辑状态
         textArea.setEditable(true);
@@ -109,11 +114,14 @@ public class ManagementViewController implements Initializable {
         if(tabPane.isVisible()){
             tabPane.setVisible(false);
         }
+        if (tabPane2.isVisible()){
+            tabPane2.setVisible(false);
+        }
     }
 
     private void displayTab(DataEnum.DataForm dataForm) throws ClassNotFoundException {
         paneClosing();
-       tabPane.setVisible(true);
+        tabPane.setVisible(true);
         if (tabMap.containsKey(dataForm)){
             tabPane.getSelectionModel().select(tabMap.get(dataForm));
         }else {
@@ -188,6 +196,19 @@ public class ManagementViewController implements Initializable {
                 break;
             }
         }
+    }
+
+    private void disPlayReportedComment() throws ClassNotFoundException {
+        paneClosing();
+        tabPane2.setVisible(true);
+        if (!reportedCommentLoad){
+            reportedCommentLoad = true;
+            dataTab = new DataTab<>(DataEnum.DataForm.Comment,commentService.reportedComments());
+            dataTab.setText("ReportedComment");
+            tabPane2.getTabs().add(dataTab);
+        }
+        tabPane2.getSelectionModel().select(dataTab);
+        dataTab.setOnClosed(event -> reportedCommentLoad = false);
     }
 
     /**

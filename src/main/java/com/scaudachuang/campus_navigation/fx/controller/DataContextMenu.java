@@ -8,8 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -19,8 +18,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Getter
-@Setter
+@Data
 public class DataContextMenu<T> extends ContextMenu {
 
     //菜单按钮
@@ -240,7 +238,7 @@ public class DataContextMenu<T> extends ContextMenu {
             if(type==1&&field.getName().equals("id")){
                 //获取当前库的最新id
                 //分配id
-                int data = 0;//这个需要yx弄
+                int data = getCorrectedId();
                 System.out.println(data);
                 method.invoke(object,data);
             }
@@ -277,6 +275,40 @@ public class DataContextMenu<T> extends ContextMenu {
         dataTab.getEObservableList().add((T)retOp);
     }
 
+    /**
+     * 获取数据库中可用的最小id
+     * @return
+     * @throws NoSuchMethodException
+     * @throws InvocationTargetException
+     * @throws IllegalAccessException
+     */
+    private int getCorrectedId() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class<?> dataClass = dataTab.getEType();
+        Object object;
+        String methodName = "getId";
+        //方法名
+        Method method = dataClass.getMethod(methodName);
+
+        //按id递增排序
+        dataTab.getEObservableList().sort((o1, o2) -> {
+            try {
+                return (int)method.invoke(o1)-(int)method.invoke(o2);
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
+            return 0;
+        });
+
+        //循环检测可用id
+        int i=0;
+        for(; i < dataTab.getEObservableList().size() ; i++){
+            object = dataTab.getEObservableList().get(i);
+            if((int)method.invoke(object)!=i+1){
+                return i+1;
+            }
+        }
+        return i+1;
+    }
     /**
      *根据行和列获取 ggbird中的节点
      * @param row 行
