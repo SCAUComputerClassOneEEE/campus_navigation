@@ -22,15 +22,17 @@
                            </VBox>
                        </content>
                    </TitledPane>
-                   <TitledPane animated="false" text="数据操作"/>
-                   <TitledPane animated="false" text="数据监控">
+                   <TitledPane animated="false" text="数据操作">
                        <content>
-                           <VBox prefHeight="200.0" prefWidth="100.0"/>
+                           <VBox fx:id="vBox2" prefHeight="200.0" prefWidth="100.0">
+                               <Button fx:id="ReportedComments" mnemonicParsing="false" onAction="#ReportedComments" prefHeight="26.0"
+                                       prefWidth="248.0" text="ReportedComments"/>
+                           </VBox>
                        </content>
                    </TitledPane>
                    <TitledPane animated="false" text="公告发布">
                        <content>
-                           <VBox fx:id="vBox2" prefHeight="200.0" prefWidth="100.0">
+                           <VBox fx:id="vBox3" prefHeight="200.0" prefWidth="100.0">
                                <children>
                                    <Button mnemonicParsing="false" onAction="#Announcement" prefHeight="31.0"
                                            prefWidth="365.0" text="Announcement"/>

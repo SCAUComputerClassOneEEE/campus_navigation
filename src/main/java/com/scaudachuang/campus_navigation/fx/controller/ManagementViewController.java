@@ -42,9 +42,12 @@ public class ManagementViewController implements Initializable {
     @FXML
     private VBox vBox1;
     @FXML
-    private Pane pane;
-    @FXML
     private VBox vBox2;
+    @FXML
+    private VBox vBox3;
+    @FXML
+    private Pane pane;
+
     @FXML
     private AnchorPane anchorPane;
 
@@ -63,6 +66,7 @@ public class ManagementViewController implements Initializable {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
         vBox1.setPadding(new Insets(0));
         vBox2.setPadding(new Insets(0));
+        vBox3.setPadding(new Insets(0));
         textArea = new TextArea();
     }
 
@@ -76,6 +80,8 @@ public class ManagementViewController implements Initializable {
     private void User() throws ClassNotFoundException { displayTab(DataEnum.DataForm.User); }
     @FXML
     private void Announcement() { displayNotice(); }
+    @FXML
+    private void ReportedComments() {}
 
     private void edit(){//点击编辑按钮，将textArea设置成可编辑状态
         textArea.setEditable(true);
