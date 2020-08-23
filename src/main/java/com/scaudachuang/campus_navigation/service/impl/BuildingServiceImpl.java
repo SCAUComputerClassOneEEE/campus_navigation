@@ -16,7 +16,7 @@ public class BuildingServiceImpl implements BuildingService {
 
     @Override
     public Building getBuildingById(int id) {
-        return buildingDAO.getOne(id);
+        return buildingDAO.findBuildingById(id);
     }
 
     @Override
