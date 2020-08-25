@@ -18,7 +18,6 @@ import java.util.Date;
 public class Comment implements Serializable,Data {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;//主键
 
     @Column(name = "reports")
