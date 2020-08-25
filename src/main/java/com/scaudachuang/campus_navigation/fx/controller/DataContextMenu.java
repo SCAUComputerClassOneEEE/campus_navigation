@@ -274,9 +274,14 @@ public class DataContextMenu<T> extends ContextMenu {
 
         Object retOp = managementViewController.updateOrAddTable(object, dataTab.getEType());
         //获取下标，插回原处
-        int locateMark = dataTab.getEObservableList().indexOf((T) retOp);
-        if (type != 1) dataTab.getEObservableList().remove((T) retOp);
-        dataTab.getEObservableList().add(locateMark,(T) retOp);
+        if (type != 1) {
+            int locateMark = dataTab.getEObservableList().indexOf((T) retOp);
+            dataTab.getEObservableList().remove((T) retOp);
+            dataTab.getEObservableList().add(locateMark,(T) retOp);
+        }else {
+            dataTab.getEObservableList().add((T) retOp);
+        }
+
     }
 
     /**
