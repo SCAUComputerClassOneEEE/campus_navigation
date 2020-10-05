@@ -5,10 +5,7 @@ import com.scaudachuang.campus_navigation.entity.Building;
 import com.scaudachuang.campus_navigation.entity.Comment;
 import com.scaudachuang.campus_navigation.entity.User;
 import com.scaudachuang.campus_navigation.fx.model.DataEnum;
-import com.scaudachuang.campus_navigation.service.AdminService;
-import com.scaudachuang.campus_navigation.service.BuildingService;
-import com.scaudachuang.campus_navigation.service.CommentService;
-import com.scaudachuang.campus_navigation.service.UserService;
+import com.scaudachuang.campus_navigation.service.*;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,7 +25,6 @@ import java.util.*;
 @Component
 public class ManagementViewController implements Initializable {
 
-
     @Resource
     private BuildingService buildingService;
     @Resource
@@ -37,6 +33,8 @@ public class ManagementViewController implements Initializable {
     private CommentService commentService;
     @Resource
     private UserService userService;
+    @Resource
+    private NoticeService noticeService;
 
     @FXML
     private TabPane tabPane;
@@ -67,7 +65,8 @@ public class ManagementViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);  //选项卡可关闭
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
+        //选项卡可关闭
         tabPane2.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
         vBox1.setPadding(new Insets(0));
         vBox2.setPadding(new Insets(0));
@@ -92,18 +91,21 @@ public class ManagementViewController implements Initializable {
         textArea.setEditable(true);
     }
 
-    private void sent() throws IOException {//点击发布，保存文本内容，并将textArea设置为不可编辑状态
+    private void sent() {//点击发布，保存文本内容，并将textArea设置为不可编辑状态
         textArea.setEditable(false);
         notice = textArea.getText();
-        Date date = new Date();
-        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String textContent = sf.format(date)+"\n"+notice+"\n";
-        System.out.println(textContent);
-        File file = new File(getClass().getResource("/static/notice").toString().substring(6));
-        FileWriter fileWriter = new FileWriter(file,true);
-        fileWriter.write(textContent);
-        fileWriter.flush();
-        fileWriter.close();
+        System.out.println(notice);
+        saveNewNotice(notice);
+//        Date date = new Date();
+//        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String textContent = sf.format(date)+"\n"+notice+"\n";
+//        System.out.println(textContent);
+//
+//        File file = new File(getClass().getResource("/static/notice").toString().substring(6));
+//        FileWriter fileWriter = new FileWriter(file,true);
+//        fileWriter.write(textContent);
+//        fileWriter.flush();
+//        fileWriter.close();
     }
 
     private void paneClosing(){
@@ -130,6 +132,9 @@ public class ManagementViewController implements Initializable {
                 case Building:{dataTab = new DataTab<>(dataForm,buildingService.finAll());break;}
                 case Comment:{dataTab = new DataTab<>(dataForm,commentService.findAll());break;}
                 case User:{dataTab = new DataTab<>(dataForm,userService.findAll());break;}
+                default:{
+
+                }
             }
             tabPane.getTabs().add(dataTab);
             tabPane.getSelectionModel().select(dataTab);
@@ -148,11 +153,7 @@ public class ManagementViewController implements Initializable {
         sent.setPrefWidth(81);
         sent.setPrefHeight(30);
         sent.setOnAction(event -> {
-            try {
-                sent();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            sent();
         });
 
         edit.setText("编辑");
@@ -176,8 +177,8 @@ public class ManagementViewController implements Initializable {
         }
     }
 
-    public void deletedTable(Object deleted, Class<?> EType){
-        switch (EType.getSimpleName()){
+    public void deletedTable(Object deleted, Class<?> eType){
+        switch (eType.getSimpleName()){
             case "Admin":{
                 adminService.deleteAdminById(((Admin) deleted).getId());
                 break;
@@ -194,6 +195,9 @@ public class ManagementViewController implements Initializable {
             case "Building":{
                 buildingService.deleteBuildingById(((Building)deleted).getId());
                 break;
+            }
+            default:{
+
             }
         }
     }
@@ -214,13 +218,15 @@ public class ManagementViewController implements Initializable {
     /**
      *
      * @param op 操作对象
-     * @param EType 操作类型
+     * @param eType 操作类型
      */
-    public Object updateOrAddTable(Object op, Class<?> EType){
-        switch (EType.getSimpleName()){
+    public Object updateOrAddTable(Object op, Class<?> eType){
+        switch (eType.getSimpleName()){
             case "Admin":{
                 Admin admin = (Admin) op;
-                if (adminService.findAdminById(admin.getId()) != null) adminService.deleteAdminById(admin.getId());
+                if (adminService.findAdminById(admin.getId()) != null) {
+                    adminService.deleteAdminById(admin.getId());
+                }
                 adminService.addAdmin(admin);
                 return admin;
             }
@@ -235,12 +241,20 @@ public class ManagementViewController implements Initializable {
             }
             case "Building":{
                 Building building = (Building) op;
-                if (buildingService.getBuildingById(building.getId()) != null) buildingService.deleteBuildingById(building.getId());
+                if (buildingService.getBuildingById(building.getId()) != null) {
+                    buildingService.deleteBuildingById(building.getId());
+                }
                 buildingService.addBuilding(building);
                 return building;
+            }
+            default:{
+
             }
         }
         return null;
     }
 
+    private void saveNewNotice(String string){
+        noticeService.addNotice(string);
+    }
 }

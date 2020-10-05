@@ -1,7 +1,7 @@
 spring:
   #配置数据库远程连接
   datasource:
-    url: jdbc:mysql://139.199.66.139:3308/dachuang
+    url: jdbc:mysql://139.199.66.139:3308/dachuang?useUnicode=true&characterEncoding=utf8
     username: root
     password: "SCAUdachuang@database12138."
     driver-class-name: com.mysql.jdbc.Driver

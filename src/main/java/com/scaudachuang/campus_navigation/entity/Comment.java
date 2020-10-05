@@ -27,7 +27,6 @@ public class Comment implements Serializable,Data {
      * json context
      *
      * **/
-
     @Column(name = "b_id",insertable = false,updatable = false)
     private int bid;
 
@@ -49,15 +48,15 @@ public class Comment implements Serializable,Data {
 
 
 
-    @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
-    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
-    @JoinColumn(name = "b_id")
-    private Building building;
-
-    @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
-    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
-    @JoinColumn(name = "u_id")
-    private User user;
+//    @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
+//    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
+//    @JoinColumn(name = "b_id")
+//    private Building building;
+//
+//    @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
+//    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false,fetch = FetchType.LAZY)
+//    @JoinColumn(name = "u_id")
+//    private User user;
 
     @Override
     public String toString() {
