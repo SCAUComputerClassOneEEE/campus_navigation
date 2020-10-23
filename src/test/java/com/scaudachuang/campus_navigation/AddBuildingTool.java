@@ -2,7 +2,7 @@ package com.scaudachuang.campus_navigation;
 
 import com.scaudachuang.campus_navigation.entity.Building;
 import com.scaudachuang.campus_navigation.service.BuildingService;
-import com.sun.jmx.remote.internal.ArrayQueue;
+
 import org.junit.jupiter.api.Test;
 
 import javax.annotation.Resource;
@@ -15,7 +15,7 @@ public class AddBuildingTool {
     @Resource
     private BuildingService buildingService;
     //缓冲那些被筛选文件下的新的建筑id
-    private final ArrayQueue<Integer> idQueue = new ArrayQueue<>(10);
+    //private final ArrayQueue<Integer> idQueue = new ArrayQueue<>(10);
     
     /**
      *

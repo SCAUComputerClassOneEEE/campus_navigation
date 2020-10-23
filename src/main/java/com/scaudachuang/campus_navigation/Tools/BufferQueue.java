@@ -1,6 +1,5 @@
 package com.scaudachuang.campus_navigation.Tools;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
 import lombok.Data;
 
 import java.io.File;
@@ -9,11 +8,16 @@ import java.util.Map;
 
 public class BufferQueue {
 
+    private static final BufferQueue bufferQueue = new BufferQueue();
     private static final int BUFFER_SIZE = 10;
     private final FileKV[] buffer = new FileKV[BUFFER_SIZE];
     private int head = 0;
     private int tail = 0;
-    
+
+    public static BufferQueue getBufferQueue(){
+        return bufferQueue;
+    }
+
     public boolean add(File file){
         String fileName = file.getName();
         String[] fileSplit = fileName.split("-");
@@ -28,6 +32,12 @@ public class BufferQueue {
             }
         }
         return true;
+    }
+
+    public FileKV take(){
+        synchronized (buffer){
+            return null;
+        }
     }
 
     @Data
