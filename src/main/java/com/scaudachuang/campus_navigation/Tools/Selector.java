@@ -12,9 +12,11 @@ public class Selector implements Runnable{
     @Override
     public void run() {
         //获取文件
-        String buildingDirectoryPath = "buildings";
-        File buildingDirectory = new File(String.valueOf(getClass().getResource(buildingDirectoryPath)));
+//        String buildingDirectoryPath = "buildings";
+        File buildingDirectory = new File(String.valueOf(this.getClass().getClassLoader().getResource("buildings")).substring(6));
         File[] buildingFiles = buildingDirectory.listFiles();
+
+
         assert buildingFiles != null;
         ArrayList<File> fileArrayList = new ArrayList<>(Arrays.asList(buildingFiles));
 

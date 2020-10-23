@@ -3,8 +3,6 @@ package com.scaudachuang.campus_navigation.Tools;
 import lombok.Data;
 
 import java.io.File;
-import java.util.List;
-import java.util.Map;
 
 public class BufferQueue {
 
@@ -19,7 +17,7 @@ public class BufferQueue {
     }
 
     public boolean add(File file){
-        String fileName = file.getName();
+        String fileName = file.getName().split("\\.")[0];
         String[] fileSplit = fileName.split("-");
         int id = Integer.parseInt(fileSplit[0]);
         String buildingName = fileSplit[1];
@@ -36,7 +34,14 @@ public class BufferQueue {
 
     public FileKV take(){
         synchronized (buffer){
-            return null;
+            if (tail == head){
+                //kong
+                return null;
+            }else {
+                FileKV fileKV = buffer[tail];
+                tail = (tail + 1) % BUFFER_SIZE;
+                return fileKV;
+            }
         }
     }
 

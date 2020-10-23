@@ -1,16 +1,18 @@
 package com.scaudachuang.campus_navigation.Tools;
 
 import com.scaudachuang.campus_navigation.entity.Building;
-import org.bouncycastle.util.encoders.Base64Encoder;
-
+import lombok.SneakyThrows;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Base64;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class TakConsumer implements Runnable{
+public class TaskConsumer implements Runnable{
 
+    private final AtomicInteger integer = new AtomicInteger();
+
+    @SneakyThrows
     @Override
     public void run() {
 
@@ -23,8 +25,14 @@ public class TakConsumer implements Runnable{
                 building.setId(fileKV.getId());
                 building.setName(fileKV.getBuildingName());
 
-                Base64Encoder base64Encoder = new Base64Encoder();
-
+                byte[] read = readFile(fileKV.getFile());
+                String encodeStr = Base64.getEncoder().encodeToString(read);
+                building.setImg(encodeStr);
+                System.out.println(building.toString());
+                System.out.println(integer.addAndGet(1));
+                if (integer.get() == 56) break;
+//                System.out.println(buildingService);
+//                buildingService.addBuilding(building);
             }
         }
     }
@@ -32,10 +40,7 @@ public class TakConsumer implements Runnable{
     private byte[] readFile(File file){
         try(FileInputStream fi = new FileInputStream(file)){
            byte[] b = new byte[fi.available()];
-           int readLen = fi.read(b);
-           if (readLen==fi.available())
-               return b;
-           return null;
+           return b;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
