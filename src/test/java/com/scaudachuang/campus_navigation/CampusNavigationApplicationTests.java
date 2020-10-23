@@ -2,6 +2,7 @@ package com.scaudachuang.campus_navigation;
 
 
 import com.scaudachuang.campus_navigation.entity.Admin;
+import com.scaudachuang.campus_navigation.entity.Building;
 import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import com.scaudachuang.campus_navigation.service.AdminService;
 import com.scaudachuang.campus_navigation.service.BuildingService;
@@ -17,6 +18,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.Objects;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 @SpringBootTest
@@ -65,4 +68,5 @@ class CampusNavigationApplicationTests {
         File file = new File("D:/sources/java/campus_navigation/target/test-classes/file/message.txt");
         System.out.println(file.exists());
     }
+
 }
