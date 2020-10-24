@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BuildingDAO extends JpaRepository<Building,Integer> {
     Building findBuildingById(int id);
+    void deleteBuildingById(int id);
 }

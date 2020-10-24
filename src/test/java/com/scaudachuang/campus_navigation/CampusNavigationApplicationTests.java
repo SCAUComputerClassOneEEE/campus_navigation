@@ -1,9 +1,9 @@
 package com.scaudachuang.campus_navigation;
 
 
+import com.scaudachuang.campus_navigation.Tools.Selector;
+import com.scaudachuang.campus_navigation.Tools.TaskConsumer;
 import com.scaudachuang.campus_navigation.entity.Admin;
-import com.scaudachuang.campus_navigation.entity.Building;
-import com.scaudachuang.campus_navigation.fx.model.DataEnum;
 import com.scaudachuang.campus_navigation.service.AdminService;
 import com.scaudachuang.campus_navigation.service.BuildingService;
 import com.scaudachuang.campus_navigation.service.CommentService;
@@ -12,14 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.io.File;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
+import java.util.Base64;
 import java.util.Objects;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 @SpringBootTest
@@ -59,14 +58,38 @@ class CampusNavigationApplicationTests {
 
     @Test
     void getResourcesTest(){
-//        System.out.println(getClass().getResource(""));
-//
         System.out.println(getClass().getResource("/file/message.txt"));
         URL url = getClass().getResource("/file/message.txt");
         String filePath = url.toString().substring(6);
         System.out.println(filePath);
         File file = new File("D:/sources/java/campus_navigation/target/test-classes/file/message.txt");
         System.out.println(file.exists());
+    }
+
+    @Test
+    public void tool() throws InterruptedException, IOException {
+//        for (int i = 1;i<=56;i++){
+//            buildingService.deleteBuildingById(i);
+//        }
+        long sTime = System.currentTimeMillis();
+        Thread t1 = new Thread(new Selector());
+        Thread t2 = new Thread(new TaskConsumer(buildingService));
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        long eTime = System.currentTimeMillis();
+        System.out.println(eTime - sTime);
+    }
+
+    @Test
+    public void base64test(){
+        String fileName = Objects.requireNonNull(this.getClass().getClassLoader().getResource("1.JPG")).toString().substring(6);
+        System.out.println(fileName);
+        File file = new File(fileName);
+        String s = Base64.getEncoder().encodeToString(TaskConsumer.readFile(file));
+        System.out.println(s.length());
+        System.out.println(s);
     }
 
 }

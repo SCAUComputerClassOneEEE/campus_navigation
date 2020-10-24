@@ -1,6 +1,11 @@
 package com.scaudachuang.campus_navigation.Tools;
 
+import lombok.SneakyThrows;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,13 +14,12 @@ import java.util.Arrays;
  */
 public class Selector implements Runnable{
 
+    @SneakyThrows
     @Override
     public void run() {
-        //获取文件
-//        String buildingDirectoryPath = "buildings";
+        System.out.println("Selector start...");
         File buildingDirectory = new File(String.valueOf(this.getClass().getClassLoader().getResource("buildings")).substring(6));
         File[] buildingFiles = buildingDirectory.listFiles();
-
 
         assert buildingFiles != null;
         ArrayList<File> fileArrayList = new ArrayList<>(Arrays.asList(buildingFiles));

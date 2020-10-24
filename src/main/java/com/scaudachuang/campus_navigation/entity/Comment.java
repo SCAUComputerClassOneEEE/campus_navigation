@@ -36,6 +36,9 @@ public class Comment implements Serializable,Data {
     @Column(name = "message")
     private String message;//内容
 
+    @Column(name = "comName")
+    private String comName;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "time_of_commentary")
