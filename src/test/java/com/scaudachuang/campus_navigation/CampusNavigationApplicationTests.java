@@ -83,13 +83,18 @@ class CampusNavigationApplicationTests {
     }
 
     @Test
-    public void base64test(){
-        String fileName = Objects.requireNonNull(this.getClass().getClassLoader().getResource("1.JPG")).toString().substring(6);
-        System.out.println(fileName);
-        File file = new File(fileName);
-        String s = Base64.getEncoder().encodeToString(TaskConsumer.readFile(file));
-        System.out.println(s.length());
-        System.out.println(s);
+    public void base64test() throws IOException {
+        String buildingsIntro = String.valueOf(this.getClass().getClassLoader().getResource("buildingIntros.txt")).substring(6);
+        System.out.println(buildingsIntro);
+        File buildingsIntroFile = new File(buildingsIntro);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(buildingsIntroFile));
+        String temp;
+        int i = 1;
+        while ((temp = bufferedReader.readLine()) != null) {
+            System.out.println("rows: " + i + ", temp: " + temp.substring(0,6));
+            buildingService.updateBuildingIntroById(i,temp);
+            i++;
+        }
     }
 
 }

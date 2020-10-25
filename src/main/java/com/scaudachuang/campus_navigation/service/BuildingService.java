@@ -9,4 +9,5 @@ public interface BuildingService {
     List<Building> finAll();
     void deleteBuildingById(int id);
     void addBuilding(Building building);
+    void updateBuildingIntroById(int id, String intro);
 }

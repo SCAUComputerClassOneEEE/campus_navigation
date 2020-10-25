@@ -32,4 +32,9 @@ public class BuildingServiceImpl implements BuildingService {
         buildingDAO.save(building);
     }
 
+    @Override
+    public void updateBuildingIntroById(int id, String intro) {
+        buildingDAO.updateBuildingIntroById(intro,id);
+    }
+
 }
